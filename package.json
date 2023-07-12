@@ -2,8 +2,13 @@
   "name": "shoppy-admin-dashboard",
   "version": "1.0.0",
   "private": true,
+  "source": "src/index.html",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "parcel",
+    "build": "parcel build"
   },
-  "author": "Olenka Hryk"
+  "author": "Olenka Hryk",
+  "devDependencies": {
+    "parcel": "^2.9.3"
+  }
 }
