@@ -1,0 +1,44 @@
+.button-wrapper {
+    overflow: hidden;
+    margin-inline: .875rem;
+    border-radius: 0.4rem;
+    box-shadow: 0 2px 6px rgba(var(--value-decorative-main-color), .48);
+}
+
+.button-wrapper a {
+    display: flex;
+    align-items: center;
+}
+
+.button-action {
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    height: 43px;
+    background: linear-gradient(72.47deg, var(--color-primary) 22.16%, rgba(var(--value-decorative-main-color), .8) 76.47%) !important;
+}
+
+.button-action-icon {
+    margin: 0px;
+    position: relative;
+    margin-inline-end: 0.5rem;
+}
+
+.button-action-title {
+    color: var(--color-white) !important;
+    letter-spacing: .15px;
+    line-height: 35px;
+}
+
+.button-login {
+    background-color: var(--decorative-main-color) !important;
+    color: var(--button-decorative-text-color) !important;
+    border-color: var(--decorative-main-color) !important;
+    width: 100%;
+    letter-spacing: .0269rem;
+}
+
+.button-login:hover {
+    background: var(--button-decorative-hover-color) !important;
+    width: 98%;
+}

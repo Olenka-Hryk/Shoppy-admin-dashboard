@@ -1,0 +1,147 @@
+.table-card-wrapper {
+    --bs-card-border-width: 0px;
+}
+
+.table-card-title {
+    flex: none;
+    display: grid;
+    align-items: center;
+    padding: 24px;
+}
+
+.table-card-title--with-subtitle {
+    padding: 0px;
+}
+
+.table-card-title--large {
+    font-size: 30px;
+    line-height: 45px;
+    margin-bottom: 0px;
+}
+
+.table-card-more-btn {
+    display: flex;
+    align-items: center;
+}
+
+.table-card-divider {
+    color: rgb(var(--value-accent-text-color));
+    opacity: 0.16;
+    display: block;
+    max-height: 0px;
+    border-style: solid;
+    border-width: thin 0 0 0;
+    width: 100%;
+    height: 0px;
+    transition: inherit;
+}
+
+.table-wrapper {
+    overflow: auto;
+    border-radius: inherit;
+    line-height: 1.5;
+}
+
+.table-wrapper>table>thead>tr>th {
+    text-align: start;
+    padding: 0 16px;
+    font-weight: var(--standard-font-weight);
+    width: 100%;
+    height: calc(var(--standard-table-header-height) + 0px);
+    user-select: none;
+    transition: height cubic-bezier(.4, 0, .2, 1);
+    border-bottom: thin solid rgba(var(--value-accent-text-color), 0.16);
+}
+
+.table-wrapper>table>tbody>tr>td {
+    padding: 0 16px;
+    height: calc(var(--standard-table-row-height, 52px) + 0px);
+    transition: height cubic-bezier(.4, 0, .2, 1);
+}
+
+.table-wrapper th {
+    color: var(--accent-text-color) !important;
+    font-size: .8125rem;
+    font-weight: 500;
+    letter-spacing: .0625rem;
+    text-transform: uppercase;
+}
+
+.table-wrapper tbody tr:not(:last-child) td {
+    border: none !important;
+}
+
+.table-margin-1 {
+    margin-inline-end: 12px !important;
+}
+
+.table-responsive {
+    overflow: hidden;
+    display: flex;
+    flex: 1 0 auto;
+    max-height: 100%;
+    max-width: 100%;
+    position: relative;
+}
+
+.table-img {
+    z-index: 0;
+}
+
+.table-inner-img {
+    position: absolute;
+    object-fit: contain;
+    border-style: none;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.table-responsive__sizer {
+    flex: 1 0 0px;
+    transition: padding-bottom .2s cubic-bezier(.4, 0, .2, 1);
+    pointer-events: none;
+}
+
+.table-label-badge-status {
+    display: inline-flex;
+    align-items: center;
+    cursor: default;
+    background: transparent;
+    height: calc(var(--standard-height) + 0px);
+    text-decoration: none;
+    white-space: nowrap;
+    font-size: .8125rem;
+    font-weight: var(--standard-font-weight);
+    border-width: 0;
+    border-radius: 0.25rem;
+    border-style: solid;
+    border-color: rgba(var(--value-accent-text-color), 0.16);
+    padding: 0 10px;
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    vertical-align: middle;
+}
+
+.table-label-badge-status__underlay {
+    position: absolute;
+    color: inherit;
+    background: currentColor;
+    opacity: 0.16;
+    border-radius: inherit;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.custom-row {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1 auto;
+    margin: -12px;
+}

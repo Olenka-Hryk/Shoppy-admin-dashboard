@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Public+Sans:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600&display=swap');
+
+:root {
+  --standard-front-background-color: rgb(248, 247, 250);
+  --standard-back-background: #f8f7fa;
+  --standard-box-shadow: 0 2px 6px rgba(47, 43, 61, .14), 0 0 transparent, 0 0 transparent;
+  --standard-line-height: 1.5;
+  --standard-font-weight: 500;
+  --standard-border-radius: 6px;
+  --standard-hover-opacity: 0.04;
+  --standard-selected-opacity: 0.06;
+  --standard-overlay-multiplier: 1;
+  --standard-vh: 11.35px;
+  --standard-image-height: 40px;
+  --standard-table-header-height: 48px !important;
+  --standard-table-row-height: 56px;
+  --standard-height: 24px;
+
+
+  --value-decorative-main-color: 115, 103, 240;
+  --value-accent-text-color: 47, 43, 61;
+  --value-color-white: 255, 255, 255;
+  
+  --color-white: rgb(255, 255, 255);
+  --color-disabled: rgba(47, 43, 61, 0.42);
+  --color-success: rgb(40, 199, 111);
+  --color-error: rgb(234, 84, 85);
+  --color-warning: rgb(255, 159, 67);
+  --color-primary: rgb(115, 103, 240);
+  --color-secondary: rgb(168, 170, 174);
+
+  --main-font-family: "Public Sans", sans-serif;
+  --main-text-font-weight: 400;
+  --main-text-color: rgba(47, 43, 61, 0.68);
+
+  --accent-text-color: rgba(47, 43, 61, 0.78);
+  --accent-text-font-weigh: 500;
+
+  --decorative-main-color: rgb(115, 103, 240);
+
+  --calendar-time-font-family: "Cairo", sans-serif;
+  --sidenav-section-title-color: rgba(47, 43, 61, 0.42);
+  --authorization-main-background-color: #f8f7fa;
+  --input-box-shadow-color: rgba(118, 118, 118, 0.113);
+
+  --button-decorative-text-color: rgb(255, 255, 255);
+  --button-decorative-hover-color: rgb(101, 91, 210);
+}

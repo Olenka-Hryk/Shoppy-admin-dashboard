@@ -1,0 +1,8 @@
+.note-title {
+    font-size: 23px;
+    font-weight: var(--standard-font-weight);
+}
+
+.note-list-item {
+    padding-bottom: 0px;
+}

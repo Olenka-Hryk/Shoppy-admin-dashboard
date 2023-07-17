@@ -1,0 +1,16 @@
+.calendar-title {
+    font-size: 35px;
+    line-height: 45px;
+    margin-bottom: 0px;
+}
+
+.calendar-subtitle {
+    color: var(--decorative-main-color);
+}
+
+.calendar-time {
+    font-family: var(--calendar-time-font-family);
+    font-size: 23px;
+    line-height: 45px;
+    margin-bottom: 0px;
+}

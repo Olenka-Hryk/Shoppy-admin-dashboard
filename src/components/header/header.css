@@ -1,0 +1,32 @@
+.header-layout {
+    position: sticky;
+    color: var(--accent-text-color);
+    padding-top: 20px;
+    padding-bottom: 10px;
+    z-index: 11;
+    inline-size: 100%;
+    max-inline-size: 1440px;
+    margin-inline: auto;
+    padding-inline: 1.5rem;
+    inset-block-start: 1rem;
+}
+
+.header-content-container {
+    background-color: var(--color-white);
+    block-size: 64px;
+    padding-inline: 1.5rem;
+    border-radius: var(--standard-border-radius);
+    box-shadow: 0 2px 6px rgba(var(--value-accent-text-color), .14), 0 0 transparent, 0 0 transparent;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+}
+
+.header-avatar-user {
+    display: inline-block;
+    line-height: 1;
+}
+
+.header-avatar-user__wrapper {
+    display: flex;
+    position: relative;
+}

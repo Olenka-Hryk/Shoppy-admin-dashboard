@@ -1,0 +1,148 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: var(--main-font-family);
+    color: var(--main-text-color);
+    line-height: var(--standard-line-height);
+    font-size: 1rem;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+html {
+    box-sizing: border-box;
+    overflow-y: scroll;
+    word-break: normal;
+    tab-size: 4;
+    -moz-tab-size: 4;
+    -webkit-text-size-adjust: 100%;
+}
+
+*,
+:before,
+:after {
+    background-repeat: no-repeat;
+    box-sizing: inherit;
+}
+
+:before,
+:after {
+    text-decoration: inherit;
+    vertical-align: inherit;
+}
+
+a {
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active,
+a:hover {
+    outline-width: 0;
+}
+
+hr {
+    margin: 0px;
+}
+
+ol,
+ul {
+    padding-left: 5px;
+    list-style-type: none;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+input {
+    border-radius: 0;
+}
+
+input[type="text"]:hover {
+    border: 1px solid var(--decorative-main-color) !important;
+
+}
+
+input[type="text"],
+textarea {
+    outline: none;
+    border-radius: var(--standard-border-radius);
+}
+
+optgroup {
+    font-weight: 700;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    font: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+    background-color: transparent;
+    border-style: none;
+}
+
+button {
+    overflow: visible;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+[type=button],
+[type=reset],
+[type=submit],
+[role=button] {
+    cursor: pointer;
+    color: inherit;
+}
+
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+    border-style: none;
+    padding: 0;
+}
+
+button:-moz-focusring,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+    outline: 1px dotted ButtonText;
+}
+
+button,
+html [type=button],
+[type=reset],
+[type=submit] {
+    -webkit-appearance: button;
+}
+
+
+::placeholder {
+    color: rgba(47, 43, 61, 0.269) !important;
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: rgba(47, 43, 61, 0.269) !important;
+}
+
+::-ms-input-placeholder {
+    color: rgba(47, 43, 61, 0.269) !important;
+}

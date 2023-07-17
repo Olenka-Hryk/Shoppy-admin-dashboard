@@ -1,0 +1,23 @@
+.container-xl {
+    max-width: 1440px;
+}
+
+.leading-normal {
+    line-height: normal !important;
+}
+
+.align-center {
+    align-items: center !important;
+}
+
+.mt-2 {
+    margin-top: 8px !important;
+}
+
+.mt-4 {
+    margin-top: 16px !important;
+}
+
+.gap-x-3 {
+    column-gap: 0.75rem;
+}

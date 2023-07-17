@@ -1,0 +1,31 @@
+.currency-table {
+    gap: 1em !important;
+}
+
+.currency-table-name {
+    align-items: end;
+    gap: 30px !important;
+    color: var(--accent-text-color);
+}
+
+.currency-table-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px !important;
+}
+
+.currency-table-body {
+    justify-content: center;
+}
+
+.currency-value {
+    color: rgba(41, 38, 51, 0.87) !important;
+}
+
+.currency-name {
+    opacity: 1;
+    color: var(--color-disabled);
+    line-height: 15px;
+    font-size: .8125rem;
+    font-weight: var(--main-text-font-weight);
+}

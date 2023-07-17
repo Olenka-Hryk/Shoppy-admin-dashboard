@@ -1,5 +1,10 @@
-@import "styles/variables.css";
-
-body {
-    background-color: var(--bg-color);
-}
+@import "css/variables.css";
+@import "css/global.css";
+@import "css/layout.css";
+@import "css/image.css";
+@import "css/card.css";
+@import "css/form.css";
+@import "css/table.css";
+@import "css/button.css";
+@import "css/input.css";
+@import "css/typography.css";

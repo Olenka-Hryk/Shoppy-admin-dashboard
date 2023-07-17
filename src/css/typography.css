@@ -1,0 +1,67 @@
+.text-no-wrap {
+    white-space: nowrap !important;
+}
+
+.font-weight-medium {
+    font-weight: var(--standard-font-weight) !important;
+}
+
+.text-base {
+    font-size: .9375rem;
+    line-height: 1.3125rem;
+}
+
+.text-sm {
+    font-size: .8125rem;
+    line-height: 1.25rem;
+}
+
+.text-disabled {
+    color: var(--color-disabled) !important;
+}
+
+.text-success {
+    color: var(--color-success) !important;
+}
+
+.text-error {
+    color: var(--color-error) !important;
+}
+
+.text-warning {
+    color: var(--color-warning) !important;
+}
+
+.text-primary {
+    color: var(--color-primary) !important;
+}
+
+.text-secondary {
+    color: var(--color-secondary) !important;
+}
+
+.text-accent {
+    color: var(--accent-text-color);
+}
+
+.text-decorative {
+    color: var(--decorative-main-color);
+}
+
+.text-main-info {
+    color: var(--accent-text-color);
+    font-size: 2.375rem !important;
+    font-weight: var(--standard-font-weight);
+    line-height: 3.25rem;
+    letter-spacing: normal !important;
+    text-transform: none !important;
+}
+
+.text-subtitle {
+    padding-bottom: 20px;
+    font-size: .8125rem;
+    font-weight: var(--main-text-font-weight);
+    line-height: 1.25rem;
+    opacity: 1;
+    color: var(--color-disabled);
+}

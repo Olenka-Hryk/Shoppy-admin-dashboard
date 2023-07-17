@@ -1,0 +1,10 @@
+.input-field {
+    transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.input-field:focus,
+.input-field:hover {
+    box-shadow: 0 1px 8px var(--input-box-shadow-color), 0 .5rem 1rem -.75rem var(--input-box-shadow-color);
+    -webkit-transform: translate3d(0, -3px, 0);
+    transform: translate3d(0, -3px, 0);
+}
