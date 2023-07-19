@@ -1,10 +1,10 @@
 <div class="d-flex align-items-center justify-content-around">
 	<div class="card-wrapper-title">
-		<h1 class="card-title weather-widget-title">Overcast clouds</h1>
+		<h1 id="weatherDescription" class="card-title weather-widget-title"></h1>
 		<div class="d-flex flex-row align-items-center">
 			<img src="/src/assets/svg-ui/ui-location.svg" alt="" class="svg-icon"
 				style="font-size: 26px; height: 15px; width: 15px;">
-			<span class="text-base weather-widget-subtitle">Lviv, Ukraine</span>
+			<span id="userLocation" class="text-base weather-widget-subtitle"></span>
 		</div>
 		<div class="d-flex flex-row weather-widget-info-wrapper">
 			<div class="d-flex flex-column weather-widget-info-container">
@@ -12,7 +12,7 @@
 					<span class="text-sm mb-0 text-disabled weather-widget-text">Wind
 						speed:&nbsp;&nbsp;&nbsp;</span>
 					<div class="d-flex justify-content-around" style="gap: 3px">
-						<span class="text-sm mb-0 text-disabled weather-widget-text">4.02</span>
+						<span id="windSpeed" class="text-sm mb-0 text-disabled weather-widget-text"></span>
 						<span class="text-sm mb-0 text-disabled weather-widget-text"><sup
 								class="weather-widget-text">m</sup>/s</span>
 					</div>
@@ -20,14 +20,14 @@
 				<div class="d-flex justify-content-between">
 					<span class="text-sm mb-0 text-disabled weather-widget-text">Pressure:</span>
 					<div class="d-flex justify-content-around" style="gap: 3px">
-						<span class="text-sm mb-0 text-disabled weather-widget-text">1019</span>
+						<span id="pressure" class="text-sm mb-0 text-disabled weather-widget-text"></span>
 						<span class="text-sm mb-0 text-disabled weather-widget-text">hPa</span>
 					</div>
 				</div>
 				<div class="d-flex justify-content-between">
 					<span class="text-sm mb-0 text-disabled weather-widget-text">Humidity:</span>
 					<div class="d-flex justify-content-around" style="gap: 3px">
-						<span class="text-sm mb-0 text-disabled weather-widget-text">61</span>
+						<span id="humidity" class="text-sm mb-0 text-disabled weather-widget-text"></span>
 						<span class="text-sm mb-0 text-disabled weather-widget-text">&percnt;</span>
 					</div>
 				</div>
@@ -36,18 +36,18 @@
 				<div class="d-flex justify-content-around" style="gap: 3px">
 					<span class="text-sm mb-0 text-disabled weather-widget-text">Sunrise
 						time:&nbsp;&nbsp;&nbsp;</span>
-					<span class="text-sm mb-0 text-disabled weather-widget-text">5:17</span>
+					<span id="sunriseTime" class="text-sm mb-0 text-disabled weather-widget-text"></span>
 				</div>
 				<div class="d-flex justify-content-around" style="gap: 3px">
 					<span class="text-sm mb-0 text-disabled weather-widget-text">Sunset time:&nbsp;&nbsp;</span>
-					<span class="text-sm mb-0 text-disabled weather-widget-text">21:27</span>
+					<span id="sunsetTime" class="text-sm mb-0 text-disabled weather-widget-text"></span>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="d-flex flex-row">
-		<h4 class="text-main-info weather-widget-subtitle"> +37</h4>
+		<h4 id="temperature" class="text-main-info weather-widget-subtitle"></h4>
 		<h4 class="text-main-info weather-widget-subtitle">&#8451;</h4>
 	</div>
-	<img src="/src/images/weather-widget-openweather-icon/04n.png" alt="Weather widget icon" style="width: 8rem">
+	<img id="weatherIcon" src="/src/images/weather-widget-openweather-icon/04n.png" alt="Weather widget icon" style="width: 8rem">
 </div>
