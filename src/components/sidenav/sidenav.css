@@ -134,11 +134,6 @@
     color: var(--color-white) !important;
 }
 
-.nav-link-active-exact .svg-icon {
-    fill: var(--color-white);
-    filter: brightness(0) saturate(100%) invert(99%) sepia(11%) saturate(240%) hue-rotate(272deg) brightness(116%) contrast(100%);
-}
-
 .nav-item-title {
     line-height: 35px;
     letter-spacing: .15px;

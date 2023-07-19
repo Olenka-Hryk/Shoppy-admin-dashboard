@@ -1,5 +1,6 @@
 import "./main/main";
 import "./components/forms/form-login/form-login";
+import "./components/svg-icon/svg-icon";
 import "./components/sidenav/sidenav";
 import "./components/header/header";
 import "./components/cards/weather-widget/weather-widget";
