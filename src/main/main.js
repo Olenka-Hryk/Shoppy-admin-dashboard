@@ -25,6 +25,10 @@ export class MainComponent extends Component {
           path: "/login",
           load: () => import("../pages/login/login").then((m) => m.LoginComponent),
         },
+        {
+          path: "/products/product-list",
+          load: () => import("../pages/product-list/product-list").then((m) => m.ProductListComponent),
+        },
       ],
     }).start();
   }
