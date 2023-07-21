@@ -16,6 +16,7 @@
   --standard-table-header-height: 48px !important;
   --standard-table-row-height: 56px;
   --standard-height: 24px;
+  --standard-button-height: 38px;
 
 
   --value-decorative-main-color: 115, 103, 240;
@@ -27,6 +28,7 @@
   --color-success: rgb(40, 199, 111);
   --color-error: rgb(234, 84, 85);
   --color-warning: rgb(255, 159, 67);
+  --color-info: rgb(0, 207, 232);
   --color-primary: rgb(115, 103, 240);
   --color-secondary: rgb(168, 170, 174);
 
@@ -46,4 +48,5 @@
 
   --button-decorative-text-color: rgb(255, 255, 255);
   --button-decorative-hover-color: rgb(101, 91, 210);
+  --button-color-underlay: rgba(162, 160, 167, 0.16);
 }

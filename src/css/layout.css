@@ -1,5 +1,9 @@
 .container-xl {
-    max-width: 1440px;
+    inset-block-start: 1rem;
+    max-inline-size: 1440px;
+    padding-inline: 1.5rem;
+    padding-right: 0px;
+    padding-left: 0px;
 }
 
 .leading-normal {

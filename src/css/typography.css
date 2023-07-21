@@ -32,6 +32,10 @@
     color: var(--color-warning) !important;
 }
 
+.text-info {
+    color: var(--color-info) !important;
+}
+
 .text-primary {
     color: var(--color-primary) !important;
 }
@@ -55,6 +59,10 @@
     line-height: 3.25rem;
     letter-spacing: normal !important;
     text-transform: none !important;
+}
+
+.text-value {
+    color: var(--accent-text-color)
 }
 
 .text-subtitle {

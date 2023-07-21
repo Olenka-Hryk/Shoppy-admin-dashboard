@@ -145,6 +145,10 @@
     transition-property: width,height;
 }
 
+.card-list-item-img-category {
+    margin-inline-end: 6px;
+}
+
 .card-list__underlay {
     border-radius: var(--standard-border-radius);
     position: absolute;
@@ -155,4 +159,8 @@
     right: 0;
     bottom: 0;
     left: 0;
+}
+
+.card-list__circle-underlay {
+    border-radius: 50%;
 }

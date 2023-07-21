@@ -1,10 +1,85 @@
+.label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: inline-flex;
+    align-items: center;
+    font-size: .9375rem;
+    letter-spacing: .009375em;
+    white-space: nowrap;
+    opacity: 1!important;
+    min-width: 0;
+}
+
+.input {
+    display: grid;
+    flex: 1 1 auto;
+    font-size: .9375rem;
+    font-weight: var(--main-text-font-weight);
+    line-height: 1.5;
+}
+
+.input__control {
+    display: flex;
+    grid-area: control;
+}
+
 .input-field {
+    cursor: text;
+    position: relative;
+    display: grid;
+    grid-area: control;
+    grid-template-areas: "prepend-inner field clear append-inner";
+    grid-template-columns: min-content minmax(0,1fr) min-content min-content;
+    font-size: .9375rem;
+    line-height: 23px;
+    letter-spacing: .009375em;
+    max-width: 100%;
+    border-radius: var(--standard-border-radius);
+    contain: layout;
     transition: box-shadow .25s ease, transform .25s ease;
+}
+
+.input-field__content {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    grid-area: field;
+}
+
+.input-field-label {
+    position: absolute;
+    contain: layout paint;
+    margin-inline-start: 16px;
+    margin-inline-end: 6px;
+    max-width: calc(100% - 16px - 6px);
+    top: 8px;
+    transform-origin: left center;
+    transition: .15s cubic-bezier(.4,0,.2,1);
+    transition-property: opacity,transform;
+}
+
+.input-field-input {
+    display: flex;
+    flex-wrap: wrap;
+    color: inherit;
+    opacity: 1!important;
+    letter-spacing: .009375em;
+    width: 100%;
+    min-height: 40px;
+    padding-inline-start: 16px;
+}
+
+.input-field__append-inner {
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    grid-area: append-inner;
+    padding-top: 10px;
 }
 
 .input-field:focus,
 .input-field:hover {
     box-shadow: 0 1px 8px var(--input-box-shadow-color), 0 .5rem 1rem -.75rem var(--input-box-shadow-color);
-    -webkit-transform: translate3d(0, -3px, 0);
     transform: translate3d(0, -3px, 0);
+    -webkit-transform: translate3d(0, -3px, 0);
 }
