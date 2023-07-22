@@ -9,6 +9,7 @@ import "./components/cards/calendar/calendar";
 import "./components/cards/note/note";
 import "./components/cards/currency/currency";
 import "./components/cards/earning/earning";
+import "./components/cards/product-picture/product-picture";
 import "./components/tables/table-payment/table-payment";
 import "./components/tables/table-product-list/table-product-list";
 

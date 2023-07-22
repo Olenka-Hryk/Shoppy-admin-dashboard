@@ -14,3 +14,15 @@
     width: 100%;
     border-radius: 50%;
 }
+
+.image-round__underlay {
+    width: 13rem;
+    height: 13rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--image-background-color-underlay);
+    color: var(--image-svg-color-underlay);
+    border-radius: 50% !important;
+}

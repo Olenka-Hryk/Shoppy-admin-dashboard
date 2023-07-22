@@ -21,6 +21,10 @@
     line-height: 1.65rem;
 }
 
+.card-header-transparent {
+    background-color: transparent;
+}
+
 .card-subtitle {
     opacity: 1;
     color: var(--sidenav-section-title-color);
@@ -72,8 +76,8 @@
     border-width: 0;
     border-radius: var(--standard-border-radius);
     border-style: solid;
-    border-color: rgba(var(--value-accent-text-color),0.16);
-    box-shadow: 0 0 0 0 rgba(var(--value-accent-text-color),1),0 0 transparent,0 0 transparent;
+    border-color: rgba(var(--value-accent-text-color), 0.16);
+    box-shadow: 0 0 0 0 rgba(var(--value-accent-text-color), 1), 0 0 transparent, 0 0 transparent;
 }
 
 .card-list-item-title {
@@ -109,15 +113,15 @@
     grid-template-areas: "prepend content append";
     grid-template-columns: max-content auto max-content;
     align-items: center;
-    padding-block: 0!important;
-    padding-inline: 0!important;
+    padding-block: 0 !important;
+    padding-inline: 0 !important;
     padding: 4px 20px;
     max-width: 100%;
     min-height: 42px;
-    min-block-size: auto!important;
+    min-block-size: auto !important;
     text-decoration: none;
     border-style: solid;
-    border-color: rgba(var(--value-accent-text-color),0.16);
+    border-color: rgba(var(--value-accent-text-color), 0.16);
     border-width: 0;
     border-radius: 0;
     outline: none;
@@ -130,7 +134,7 @@
     grid-area: prepend;
 }
 
-.card-list-item-img{
+.card-list-item-img {
     color: inherit;
     background: transparent;
     flex: none;
@@ -141,8 +145,8 @@
     position: relative;
     line-height: normal;
     margin-inline-end: 16px;
-    transition: .2s cubic-bezier(.4,0,.2,1);
-    transition-property: width,height;
+    transition: .2s cubic-bezier(.4, 0, .2, 1);
+    transition-property: width, height;
 }
 
 .card-list-item-img-category {
