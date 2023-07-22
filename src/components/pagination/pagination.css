@@ -1,0 +1,32 @@
+.pagination {
+    width: 100%;
+    padding: 8px 34px;
+    color: var(--main-text-color);
+}
+
+.pagination__list {
+    width: 100%;
+    display: inline-flex;
+    justify-content: flex-end;
+}
+
+.pagination__item {
+    margin: 0.1875rem
+}
+
+.pagination__content {
+    background: var(--button-color-underlay);
+    border-radius: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.pagination-active {
+    background: var(--decorative-main-color);
+    color: var(--color-white);
+}

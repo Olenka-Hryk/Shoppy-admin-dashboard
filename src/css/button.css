@@ -70,3 +70,10 @@
 .button__underlay:hover {
     background: var(--button-color-underlay);
 }
+
+.button__pagination {
+    font-size: .9375rem;
+    border-radius: var(--standard-border-radius);
+    width: var(--standard-button-height);
+    height: var(--standard-button-height);
+}

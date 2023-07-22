@@ -13,6 +13,7 @@ import navSiteSetting from "bundle-text:../../assets/svg-sidenav/nav-site-settin
 import navLogout from "bundle-text:../../assets/svg-sidenav/nav-logout.svg";
 
 import iconUiArrowRight from "bundle-text:../../assets/svg-ui/ui-arrow-right.svg";
+import iconUiArrowLeft from "bundle-text:../../assets/svg-ui/ui-arrow-left.svg";
 import iconUiCircle from "bundle-text:../../assets/svg-ui/ui-list-circle.svg";
 import iconUiButtonAdd from "bundle-text:../../assets/svg-button/button-add.svg";
 import iconUiButtonMore from "bundle-text:../../assets/svg-button/button-more.svg";
@@ -50,6 +51,7 @@ const iconMap = {
   navLogout,
 
   iconUiArrowRight,
+  iconUiArrowLeft,
   iconUiCircle,
   iconUiButtonAdd,
   iconUiButtonMore,
