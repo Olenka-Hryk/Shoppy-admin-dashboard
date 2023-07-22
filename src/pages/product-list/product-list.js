@@ -1,6 +1,5 @@
 import { Component } from "../../core";
 import html from "bundle-text:./product-list.html";
-import "./product-list.css";
 
 export class ProductListComponent extends Component {
   render() {

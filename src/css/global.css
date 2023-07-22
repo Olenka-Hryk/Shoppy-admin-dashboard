@@ -64,7 +64,9 @@ ul {
 
 textarea {
     overflow: auto;
-    resize: vertical;
+    resize: none;
+    height: 100px;
+    border-radius: var(--standard-border-radius) !important;
 }
 
 input {
