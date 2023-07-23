@@ -146,14 +146,14 @@ html [type=button],
 
 
 ::placeholder {
-    color: rgba(47, 43, 61, 0.269) !important;
+    color: var(--standard-placeholder-color) !important;
     opacity: 1;
 }
 
 :-ms-input-placeholder {
-    color: rgba(47, 43, 61, 0.269) !important;
+    color: var(--standard-placeholder-color) !important;
 }
 
 ::-ms-input-placeholder {
-    color: rgba(47, 43, 61, 0.269) !important;
+    color: var(--standard-placeholder-color) !important;
 }
