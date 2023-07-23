@@ -1,0 +1,9 @@
+.review-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: url(../../images/ui-img/ui-background-review.png);
+    padding: 4rem !important;
+    background-size: cover !important;
+    box-shadow: none;
+}

@@ -34,6 +34,10 @@ export class MainComponent extends Component {
           load: () => import("../pages/create-product/create-product").then((m) => m.CreateProductComponent),
         },
         {
+          path: "/products/review",
+          load: () => import("../pages/review/review").then((m) => m.ReviewComponent),
+        },
+        {
           path: "/categories/category-list",
           load: () => import("../pages/category-list/category-list").then((m) => m.CategoryListComponent),
         },

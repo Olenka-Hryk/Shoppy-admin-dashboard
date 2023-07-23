@@ -67,6 +67,7 @@
     width: 100%;
     min-height: 40px;
     padding-inline-start: 16px;
+    color: var(--main-text-color) !important;
 }
 
 .input-field__append-inner {
@@ -109,4 +110,9 @@
 .input-group__text {
     padding-left: 5px;
     width: 25px;
+}
+
+.input-header-search {
+    border-radius: 0.375rem !important;
+    width: 100% !important;
 }

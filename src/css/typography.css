@@ -16,6 +16,13 @@
     line-height: 1.25rem;
 }
 
+.text-h3 {
+    font-size: 1.625rem !important;
+    line-height: 2.25rem;
+    letter-spacing: normal !important;
+    text-transform: none !important;
+}
+
 .text-disabled {
     color: var(--color-disabled) !important;
 }
