@@ -14,6 +14,7 @@ import "./components/cards/earning/earning";
 import "./components/cards/product-picture/product-picture";
 import "./components/tables/table-payment/table-payment";
 import "./components/tables/table-product-list/table-product-list";
+import "./components/tables/table-category-list/table-category-list";
 
 import "./components/forms/form-create-product/form-create-product";
 
