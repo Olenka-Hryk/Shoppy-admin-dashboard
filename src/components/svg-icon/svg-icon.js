@@ -17,6 +17,10 @@ import iconUiArrowLeft from "bundle-text:../../assets/svg-ui/ui-arrow-left.svg";
 import iconUiArrowTop from "bundle-text:../../assets/svg-ui/ui-arrow-top.svg";
 import iconUiArrowDown from "bundle-text:../../assets/svg-ui/ui-arrow-down.svg";
 import iconUiCircle from "bundle-text:../../assets/svg-ui/ui-list-circle.svg";
+import iconUiPrice from "bundle-text:../../assets/svg-ui/ui-price.svg";
+import iconUiPriceSale from "bundle-text:../../assets/svg-ui/ui-price-sale.svg";
+import iconUiBarcode from "bundle-text:../../assets/svg-ui/ui-barcode.svg";
+import iconUiBuildingStore from "bundle-text:../../assets/svg-ui/ui-building-store.svg";
 import iconUiUploadPicture from "bundle-text:../../assets/svg-ui/ui-upload-picture.svg";
 import iconUiButtonAdd from "bundle-text:../../assets/svg-button/button-add.svg";
 import iconUiButtonMore from "bundle-text:../../assets/svg-button/button-more.svg";
@@ -58,6 +62,10 @@ const iconMap = {
   iconUiArrowTop,
   iconUiArrowDown,
   iconUiCircle,
+  iconUiPrice,
+  iconUiPriceSale,
+  iconUiBarcode,
+  iconUiBuildingStore,
   iconUiUploadPicture,
   iconUiButtonAdd,
   iconUiButtonMore,
