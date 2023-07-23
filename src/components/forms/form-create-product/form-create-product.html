@@ -1,0 +1,133 @@
+<div class="card card-component p-3">
+  <div class="card-title card-header card-header-transparent">Product Details</div>
+  <div class="card-body">
+    <form>
+      <div class="row gx-3 mb-3">
+        <div class="col-md-7">
+          <label class="small mb-1 m-lg-1" for="inputProductName">Product name:</label>
+          <input class="form-control" id="inputProductName" type="text" placeholder="Enter product name" value="">
+        </div>
+
+        <div class="col-md-5 dropdown-wrapper">
+          <div class="input-field input__control card dropdown">
+            <div class="input-field__content">
+              <div class="label input-field-input dropdown__content text-disabled" id="dropdownMenuButton"
+                data-bs-toggle="dropdown">Select brand</div>
+              <div class="input-field__append-inner">
+                <app-svg-icon icon="iconUiArrowDown" class="svg-icon nav-group-arrow"
+                  style="font-size: 18px"></app-svg-icon>
+              </div>
+              <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+                <span class="dropdown-item">Adidas</span>
+                <span class="dropdown-item">Apple</span>
+                <span class="dropdown-item">Bose</span>
+                <span class="dropdown-item">Smeg</span>
+                <span class="dropdown-item">Sony</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="small mb-1 m-lg-1" for="inputProductDescription">Product description:</label>
+        <textarea id="inputProductDescription" class="form-control" aria-label="With textarea"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label class="small mb-1 m-lg-1">Choose category:</label>
+        <app-category-badge></app-category-badge>
+      </div>
+
+      <div class="row">
+        <div class="col-md-3">
+          <label class="small mb-1 m-lg-1" for="inputRegularPrice">Regular Price:</label>
+          <div class="input-field input-field--without-animation input__control card mb-3 text-decorative">
+            <div class="input-group-prepend">
+              <app-svg-icon icon="iconUiPrice" class="svg-icon input-group__image"
+                style="font-size: 20px;"></app-svg-icon>
+            </div>
+            <div class="input-field__content">
+              <input id="inputRegularPrice" type="text" class="input-field-input"
+                aria-label="Amount (to the nearest dollar)">
+            </div>
+            <div class="input-group-append">
+              <span class="input-group__text font-weight-medium text-base">&#65284;</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-3">
+          <label class="small mb-1 m-lg-1" for="inputSalePrice">Sale Price:</label>
+          <div class="input-field input-field--without-animation input__control card mb-3 text-decorative">
+            <div class="input-group-prepend">
+              <app-svg-icon icon="iconUiPriceSale" class="svg-icon input-group__image"
+                style="font-size: 20px;"></app-svg-icon>
+            </div>
+            <div class="input-field__content">
+              <input id="inputSalePrice" type="text" class="input-field-input"
+                aria-label="Amount (to the nearest dollar)">
+            </div>
+            <div class="input-group-append">
+              <span class="input-group__text font-weight-medium text-base">&#65284;</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <label class="small mb-1 m-lg-1" for="inputStock">Total Stock Quantity:</label>
+          <div class="input-field input-field--without-animation input__control card mb-3 text-decorative">
+            <div class="input-group-prepend">
+              <app-svg-icon icon="iconUiBuildingStore" class="svg-icon input-group__image"
+                style="font-size: 20px;"></app-svg-icon>
+            </div>
+            <div class="input-field__content">
+              <input id="inputStock" type="text" class="input-field-input" aria-label="Amount (to the nearest dollar)">
+            </div>
+            <div class="input-group-append">
+              <span class="input-group__text font-weight-medium text-base"
+                style="width: 60px; padding-left: 10px;">count</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8">
+        <label class="small mb-1 m-lg-1" for="inputBarcode">Barcode:</label>
+        <div class="input-field input-field--without-animation input__control card mb-3 text-decorative">
+          <div class="input-group-prepend">
+            <app-svg-icon icon="iconUiBarcode" class="svg-icon input-group__image"
+              style="font-size: 20px;"></app-svg-icon>
+          </div>
+          <div class="input-field__content">
+            <input id="inputBarcode" type="text" class="input-field-input" aria-label="Amount (to the nearest dollar)">
+          </div>
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label class="small mb-1 m-lg-1" for="checkboxVisibilityStatus">Visibility Status:</label>
+        <div class="form-check">
+          <input class="form-check-input" id="groupPublished" type="radio" value="">
+          <label class="form-check-label small" for="groupPublished">Published</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" id="groupScheduled" type="radio" value="">
+          <label class="form-check-label small" for="groupScheduled">Scheduled</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" id="groupMHidden" type="radio" value="">
+          <label class="form-check-label small" for="groupHidden">Hidden</label>
+        </div>
+      </div>
+
+      <div class="d-flex justify-content-center">
+        <button class="button-wrapper" style="width: 40%; height: 100%;">
+          <a href="#" class="button-action">
+            <span class="button-action-title">Save Product</span>
+          </a>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
