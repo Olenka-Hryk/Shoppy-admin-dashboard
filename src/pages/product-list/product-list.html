@@ -1,5 +1,38 @@
 <div class="page-content-container">
-    <div class="container-xl">
-        <app-table-product-list></app-table-product-list>
+  <div class="container-xl">
+    <div class="card card-body h-100 card-component table-card-wrapper m-1">
+      <div class="d-flex flex-column p-3">
+        <div class="card-wrapper-title">
+          <span class="card-title table-card-title--large">Product List</span>
+        </div>
+        <div class="card-text">
+          <div class="custom-row justify-content-between align-items-center mt-2">
+            <div class="col-md-4">
+              <button class="button-wrapper" style="width: 80%; height: 100%">
+                <a href="#" class="button-action">
+                  <app-svg-icon icon="iconUiButtonAdd" class="button-action-icon"
+                    style="font-size: 14px"></app-svg-icon>
+                  <span class="button-action-title">Add Product</span>
+                </a>
+              </button>
+            </div>
+            <div class="col-md-4 ml-auto">
+              <div class="input-field input__control card" role="textbox">
+                <div class="input-field__content">
+                  <label class="label input-field-label" for="input-serch-product-list"></label>
+                  <input class="input-field-input" placeholder="Search" size="1" type="text"
+                    id="input-serch-product-list">
+                </div>
+                <div class="input-field__append-inner">
+                  <img src="/src/assets/svg-header/header-search.svg" alt="" class="svg-icon">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <app-table-product-list></app-table-product-list>
+      <app-pagination></app-pagination>
     </div>
+  </div>
 </div>

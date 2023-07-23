@@ -1,469 +1,435 @@
-<div class="card card-body h-100 card-component table-card-wrapper m-1">
-  <div class="d-flex flex-column p-3">
-    <div class="card-wrapper-title">
-      <span class="card-title table-card-title--large">Product List</span>
-    </div>
-    <div class="card-text">
-      <div class="custom-row justify-content-between align-items-center mt-2">
-        <div class="col-md-4">
-          <button class="button-wrapper" style="width: 80%; height: 100%">
-            <a href="#" class="button-action">
-              <app-svg-icon icon="iconUiButtonAdd" class="button-action-icon" style="font-size: 14px"></app-svg-icon>
-              <span class="button-action-title">Add Product</span>
-            </a>
-          </button>
-        </div>
-        <div class="col-md-4 ml-auto">
-          <div class="input-field input__control card" role="textbox">
-            <div class="input-field__content">
-              <label class="label input-field-label" for="input-serch-product-list"></label>
-              <input class="input-field-input" placeholder="Search" size="1" type="text" id="input-serch-product-list">
+<div data-product-list="" class="table-wrapper text-no-wrap table-with-row">
+  <table class="w-100">
+    <thead data-product-list="">
+      <tr data-product-list="">
+        <th data-product-list="" class="font-weight-medium"> ID </th>
+        <th data-product-list="" class="font-weight-medium"> PRODUCT </th>
+        <th data-product-list="" class="font-weight-medium"> CATEGORY </th>
+        <th data-product-list="" class="font-weight-medium"> BRAND </th>
+        <th data-product-list="" class="font-weight-medium"> PRICE </th>
+        <th data-product-list="" class="font-weight-medium"> STOCK </th>
+        <th data-product-list="" class="font-weight-medium"> ACTION </th>
+      </tr>
+    </thead>
+
+    <tbody data-product-list="">
+      <tr data-product-list="">
+        <td data-product-list="">
+          <span data-product-list="" class="font-weight-medium text-base">#00123</span>
+        </td>
+        <td data-product-list="">
+          <div data-product-list="" class="d-flex align-center">
+            <div data-product-list="" class="table-margin-1">
+              <div data-product-list="" class="table-img" style="width: 50px;">
+                <img class="table-inner-img" src="../../../images/products/product-01.png" style="width: 40px;">
+              </div>
             </div>
-            <div class="input-field__append-inner">
-              <img src="/src/assets/svg-header/header-search.svg" alt="" class="svg-icon">
+            <div data-product-list="">
+              <p data-product-list="" class="font-weight-medium text-base mb-0">Apple iPhone 14 Pro 256GB (Deep
+                Purple)</p>
+              <p data-product-list="" class="text-sm mb-0 text-disabled">Apple</p>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  </div>
+        </td>
+        <td data-product-list="" class="d-flex flex-row align-items-center">
+          <div class="card-list-item__prepend">
+            <div data-product-list="" class="card-list-item-img card-list-item-img-category text-warning"
+              style="width: 34px; height: 34px;">
+              <app-svg-icon icon="iconCategorySmartPhone" class="svg-icon"
+                style="font-size: 22px; margin: auto"></app-svg-icon>
+              <span class="card-list__underlay card-list__circle-underlay"></span>
+            </div>
+          </div>
+          <span class="font-weight-medium text-base mb-0">Smart Phone</span>
+        </td>
+        <td data-product-list="">
+          <div data-product-list="" class="table-img" style="width: 40px;">
+            <app-svg-icon icon="iconBrandApple" class="svg-icon" style="font-size: 55px"></app-svg-icon>
+          </div>
+        </td>
+        <td data-product-list="">
+          <div class="d-flex flex-row align-center">
+            <span class="font-weight-medium text-base">&#65284;</span>
+            <span data-product-list="" class="font-weight-medium text-base">1,356</span>
+          </div>
+        </td>
+        <td data-product-list="">
+          <span data-product-list="" class="font-weight-medium text-base">245</span>
+        </td>
+        <td data-product-list="">
+          <button type="button" class="button-circle text-disabled">
+            <span class="button__underlay">
+              <app-svg-icon icon="iconUiButtonEdit" class="svg-icon button-circle-icon"
+                style="font-size: 22px;"></app-svg-icon>
+            </span>
+          </button>
+          <button type="button" class="button-circle text-disabled">
+            <span class="button__underlay">
+              <app-svg-icon icon="iconUiButtonDelete" class="svg-icon button-circle-icon"
+                style="font-size: 22px;"></app-svg-icon>
+            </span>
+          </button>
+        </td>
+      </tr>
 
 
-  <div data-product-list="" class="table-wrapper text-no-wrap table-with-row">
-    <table class="w-100">
-      <thead data-product-list="">
-        <tr data-product-list="">
-          <th data-product-list="" class="font-weight-medium"> ID </th>
-          <th data-product-list="" class="font-weight-medium"> PRODUCT </th>
-          <th data-product-list="" class="font-weight-medium"> CATEGORY </th>
-          <th data-product-list="" class="font-weight-medium"> BRAND </th>
-          <th data-product-list="" class="font-weight-medium"> PRICE </th>
-          <th data-product-list="" class="font-weight-medium"> STOCK </th>
-          <th data-product-list="" class="font-weight-medium"> ACTION </th>
-        </tr>
-      </thead>
-
-      <tbody data-product-list="">
-        <tr data-product-list="">
-          <td data-product-list="">
-            <span data-product-list="" class="font-weight-medium text-base">#00123</span>
-          </td>
-          <td data-product-list="">
-            <div data-product-list="" class="d-flex align-center">
-              <div data-product-list="" class="table-margin-1">
-                <div data-product-list="" class="table-img" style="width: 50px;">
-                  <img class="table-inner-img" src="../../../images/products/product-01.png" style="width: 40px;">
-                </div>
-              </div>
-              <div data-product-list="">
-                <p data-product-list="" class="font-weight-medium text-base mb-0">Apple iPhone 14 Pro 256GB (Deep
-                  Purple)</p>
-                <p data-product-list="" class="text-sm mb-0 text-disabled">Apple</p>
+      <tr data-product-list="">
+        <td data-product-list="">
+          <span data-product-list="" class="font-weight-medium text-base">#00124</span>
+        </td>
+        <td data-product-list="">
+          <div data-product-list="" class="d-flex align-center">
+            <div data-product-list="" class="table-margin-1">
+              <div data-product-list="" class="table-img" style="width: 50px;">
+                <img class="table-inner-img" src="../../../images/products/product-02.png">
               </div>
             </div>
-          </td>
-          <td data-product-list="" class="d-flex flex-row align-items-center">
-            <div class="card-list-item__prepend">
-              <div data-product-list="" class="card-list-item-img card-list-item-img-category text-warning"
-                style="width: 34px; height: 34px;">
-                <app-svg-icon icon="iconCategorySmartPhone" class="svg-icon"
-                  style="font-size: 22px; margin: auto"></app-svg-icon>
-                <span class="card-list__underlay card-list__circle-underlay"></span>
-              </div>
+            <div data-product-list="">
+              <p data-product-list="" class="font-weight-medium text-base mb-0">Nike Tech Hera</p>
+              <p data-product-list="" class="text-sm mb-0 text-disabled">Nike</p>
             </div>
-            <span class="font-weight-medium text-base mb-0">Smart Phone</span>
-          </td>
-          <td data-product-list="">
-            <div data-product-list="" class="table-img" style="width: 40px;">
-              <app-svg-icon icon="iconBrandApple" class="svg-icon" style="font-size: 55px"></app-svg-icon>
+          </div>
+        </td>
+        <td data-product-list="" class="d-flex flex-row align-items-center">
+          <div class="card-list-item__prepend">
+            <div data-product-list="" class="card-list-item-img card-list-item-img-category text-error"
+              style="width: 34px; height: 34px;">
+              <app-svg-icon icon="iconCategoryShoes" class="svg-icon"
+                style="font-size: 22px; margin: auto"></app-svg-icon>
+              <span class="card-list__underlay card-list__circle-underlay"></span>
             </div>
-          </td>
-          <td data-product-list="">
-            <div class="d-flex flex-row align-center">
-              <span class="font-weight-medium text-base">&#65284;</span>
-              <span data-product-list="" class="font-weight-medium text-base">1,356</span>
-            </div>
-          </td>
-          <td data-product-list="">
-            <span data-product-list="" class="font-weight-medium text-base">245</span>
-          </td>
-          <td data-product-list="">
-            <button type="button" class="button-circle text-disabled">
-              <span class="button__underlay">
-                <app-svg-icon icon="iconUiButtonEdit" class="svg-icon button-circle-icon"
-                  style="font-size: 22px;"></app-svg-icon>
-              </span>
-            </button>
-            <button type="button" class="button-circle text-disabled">
-              <span class="button__underlay">
-                <app-svg-icon icon="iconUiButtonDelete" class="svg-icon button-circle-icon"
-                  style="font-size: 22px;"></app-svg-icon>
-              </span>
-            </button>
-          </td>
-        </tr>
-
-
-        <tr data-product-list="">
-          <td data-product-list="">
-            <span data-product-list="" class="font-weight-medium text-base">#00124</span>
-          </td>
-          <td data-product-list="">
-            <div data-product-list="" class="d-flex align-center">
-              <div data-product-list="" class="table-margin-1">
-                <div data-product-list="" class="table-img" style="width: 50px;">
-                  <img class="table-inner-img" src="../../../images/products/product-02.png">
-                </div>
-              </div>
-              <div data-product-list="">
-                <p data-product-list="" class="font-weight-medium text-base mb-0">Nike Tech Hera</p>
-                <p data-product-list="" class="text-sm mb-0 text-disabled">Nike</p>
-              </div>
-            </div>
-          </td>
-          <td data-product-list="" class="d-flex flex-row align-items-center">
-            <div class="card-list-item__prepend">
-              <div data-product-list="" class="card-list-item-img card-list-item-img-category text-error"
-                style="width: 34px; height: 34px;">
-                <app-svg-icon icon="iconCategoryShoes" class="svg-icon"
-                  style="font-size: 22px; margin: auto"></app-svg-icon>
-                <span class="card-list__underlay card-list__circle-underlay"></span>
-              </div>
-            </div>
-            <span class="font-weight-medium text-base mb-0">Shoes</span>
-          </td>
-          <td data-product-list="">
-            <div data-product-list="" class="table-img" style="width: 40px;">
-              <app-svg-icon icon="iconBrandNike" class="svg-icon" style="font-size: 55px"></app-svg-icon>
-            </div>
-          </td>
-          <td data-product-list="">
-            <div class="d-flex flex-row align-center">
-              <span class="font-weight-medium text-base">&#65284;</span>
-              <span data-product-list="" class="font-weight-medium text-base">110</span>
-            </div>
-          </td>
-          <td data-product-list="">
-            <span data-product-list="" class="font-weight-medium text-base">668</span>
-          </td>
-          <td data-product-list="">
-            <button type="button" class="button-circle text-disabled">
-              <span class="button__underlay">
-                <app-svg-icon icon="iconUiButtonEdit" class="svg-icon button-circle-icon"
-                  style="font-size: 22px;"></app-svg-icon>
-              </span>
-            </button>
-            <button type="button" class="button-circle text-disabled">
-              <span class="button__underlay">
-                <app-svg-icon icon="iconUiButtonDelete" class="svg-icon button-circle-icon"
-                  style="font-size: 22px;"></app-svg-icon>
-              </span>
-            </button>
-          </td>
-        </tr>
+          </div>
+          <span class="font-weight-medium text-base mb-0">Shoes</span>
+        </td>
+        <td data-product-list="">
+          <div data-product-list="" class="table-img" style="width: 40px;">
+            <app-svg-icon icon="iconBrandNike" class="svg-icon" style="font-size: 55px"></app-svg-icon>
+          </div>
+        </td>
+        <td data-product-list="">
+          <div class="d-flex flex-row align-center">
+            <span class="font-weight-medium text-base">&#65284;</span>
+            <span data-product-list="" class="font-weight-medium text-base">110</span>
+          </div>
+        </td>
+        <td data-product-list="">
+          <span data-product-list="" class="font-weight-medium text-base">668</span>
+        </td>
+        <td data-product-list="">
+          <button type="button" class="button-circle text-disabled">
+            <span class="button__underlay">
+              <app-svg-icon icon="iconUiButtonEdit" class="svg-icon button-circle-icon"
+                style="font-size: 22px;"></app-svg-icon>
+            </span>
+          </button>
+          <button type="button" class="button-circle text-disabled">
+            <span class="button__underlay">
+              <app-svg-icon icon="iconUiButtonDelete" class="svg-icon button-circle-icon"
+                style="font-size: 22px;"></app-svg-icon>
+            </span>
+          </button>
+        </td>
+      </tr>
 
 
 
-        <tr data-product-list="">
-          <td data-product-list="">
-            <span data-product-list="" class="font-weight-medium text-base">#00125</span>
-          </td>
-          <td data-product-list="">
-            <div data-product-list="" class="d-flex align-center">
-              <div data-product-list="" class="table-margin-1">
-                <div data-product-list="" class="table-img" style="width: 50px;">
-                  <img class="table-inner-img" src="../../../images/products/product-03.png">
-                </div>
-              </div>
-              <div data-product-list="">
-                <p data-product-list="" class="font-weight-medium text-base mb-0">Bose Frames Tenor</p>
-                <p data-product-list="" class="text-sm mb-0 text-disabled">Bose</p>
+      <tr data-product-list="">
+        <td data-product-list="">
+          <span data-product-list="" class="font-weight-medium text-base">#00125</span>
+        </td>
+        <td data-product-list="">
+          <div data-product-list="" class="d-flex align-center">
+            <div data-product-list="" class="table-margin-1">
+              <div data-product-list="" class="table-img" style="width: 50px;">
+                <img class="table-inner-img" src="../../../images/products/product-03.png">
               </div>
             </div>
-          </td>
-          <td data-product-list="" class="d-flex flex-row align-items-center">
-            <div class="card-list-item__prepend">
-              <div data-product-list="" class="card-list-item-img card-list-item-img-category text-info"
-                style="width: 34px; height: 34px;">
-                <app-svg-icon icon="iconCategoryGlass" class="svg-icon"
-                  style="font-size: 22px; margin: auto"></app-svg-icon>
-                <span class="card-list__underlay card-list__circle-underlay"></span>
-              </div>
+            <div data-product-list="">
+              <p data-product-list="" class="font-weight-medium text-base mb-0">Bose Frames Tenor</p>
+              <p data-product-list="" class="text-sm mb-0 text-disabled">Bose</p>
             </div>
-            <span class="font-weight-medium text-base mb-0">Glass</span>
-          </td>
-          <td data-product-list="">
-            <div data-product-list="" class="table-img" style="width: 40px;">
-              <app-svg-icon icon="iconBrandBose" class="svg-icon" style="font-size: 55px"></app-svg-icon>
+          </div>
+        </td>
+        <td data-product-list="" class="d-flex flex-row align-items-center">
+          <div class="card-list-item__prepend">
+            <div data-product-list="" class="card-list-item-img card-list-item-img-category text-info"
+              style="width: 34px; height: 34px;">
+              <app-svg-icon icon="iconCategoryGlass" class="svg-icon"
+                style="font-size: 22px; margin: auto"></app-svg-icon>
+              <span class="card-list__underlay card-list__circle-underlay"></span>
             </div>
-          </td>
-          <td data-product-list="">
-            <div class="d-flex flex-row align-center">
-              <span class="font-weight-medium text-base">&#65284;</span>
-              <span data-product-list="" class="font-weight-medium text-base">369</span>
-            </div>
-          </td>
-          <td data-product-list="">
-            <span data-product-list="" class="font-weight-medium text-base">116</span>
-          </td>
-          <td data-product-list="">
-            <button type="button" class="button-circle text-disabled">
-              <span class="button__underlay">
-                <app-svg-icon icon="iconUiButtonEdit" class="svg-icon button-circle-icon"
-                  style="font-size: 22px;"></app-svg-icon>
-              </span>
-            </button>
-            <button type="button" class="button-circle text-disabled">
-              <span class="button__underlay">
-                <app-svg-icon icon="iconUiButtonDelete" class="svg-icon button-circle-icon"
-                  style="font-size: 22px;"></app-svg-icon>
-              </span>
-            </button>
-          </td>
-        </tr>
+          </div>
+          <span class="font-weight-medium text-base mb-0">Glass</span>
+        </td>
+        <td data-product-list="">
+          <div data-product-list="" class="table-img" style="width: 40px;">
+            <app-svg-icon icon="iconBrandBose" class="svg-icon" style="font-size: 55px"></app-svg-icon>
+          </div>
+        </td>
+        <td data-product-list="">
+          <div class="d-flex flex-row align-center">
+            <span class="font-weight-medium text-base">&#65284;</span>
+            <span data-product-list="" class="font-weight-medium text-base">369</span>
+          </div>
+        </td>
+        <td data-product-list="">
+          <span data-product-list="" class="font-weight-medium text-base">116</span>
+        </td>
+        <td data-product-list="">
+          <button type="button" class="button-circle text-disabled">
+            <span class="button__underlay">
+              <app-svg-icon icon="iconUiButtonEdit" class="svg-icon button-circle-icon"
+                style="font-size: 22px;"></app-svg-icon>
+            </span>
+          </button>
+          <button type="button" class="button-circle text-disabled">
+            <span class="button__underlay">
+              <app-svg-icon icon="iconUiButtonDelete" class="svg-icon button-circle-icon"
+                style="font-size: 22px;"></app-svg-icon>
+            </span>
+          </button>
+        </td>
+      </tr>
 
 
 
-        <tr data-product-list="">
-          <td data-product-list="">
-            <span data-product-list="" class="font-weight-medium text-base">#00126</span>
-          </td>
-          <td data-product-list="">
-            <div data-product-list="" class="d-flex align-center">
-              <div data-product-list="" class="table-margin-1">
-                <div data-product-list="" class="table-img" style="width: 50px;">
-                  <img class="table-inner-img" src="../../../images/products/product-04.png" style="width: 40px;">
-                </div>
-              </div>
-              <div data-product-list="">
-                <p data-product-list="" class="font-weight-medium text-base mb-0">Apple iMac 27″ 5K Retina MRR12</p>
-                <p data-product-list="" class="text-sm mb-0 text-disabled">Apple</p>
+      <tr data-product-list="">
+        <td data-product-list="">
+          <span data-product-list="" class="font-weight-medium text-base">#00126</span>
+        </td>
+        <td data-product-list="">
+          <div data-product-list="" class="d-flex align-center">
+            <div data-product-list="" class="table-margin-1">
+              <div data-product-list="" class="table-img" style="width: 50px;">
+                <img class="table-inner-img" src="../../../images/products/product-04.png" style="width: 40px;">
               </div>
             </div>
-          </td>
-          <td data-product-list="" class="d-flex flex-row align-items-center">
-            <div class="card-list-item__prepend">
-              <div data-product-list="" class="card-list-item-img card-list-item-img-category text-disabled"
-                style="width: 34px; height: 34px;">
-                <app-svg-icon icon="iconCategoryComputer" class="svg-icon"
-                  style="font-size: 22px; margin: auto"></app-svg-icon>
-                <span class="card-list__underlay card-list__circle-underlay"></span>
-              </div>
+            <div data-product-list="">
+              <p data-product-list="" class="font-weight-medium text-base mb-0">Apple iMac 27″ 5K Retina MRR12</p>
+              <p data-product-list="" class="text-sm mb-0 text-disabled">Apple</p>
             </div>
-            <span class="font-weight-medium text-base mb-0">Computer</span>
-          </td>
-          <td data-product-list="">
-            <div data-product-list="" class="table-img" style="width: 40px;">
-              <app-svg-icon icon="iconBrandApple" class="svg-icon" style="font-size: 55px"></app-svg-icon>
+          </div>
+        </td>
+        <td data-product-list="" class="d-flex flex-row align-items-center">
+          <div class="card-list-item__prepend">
+            <div data-product-list="" class="card-list-item-img card-list-item-img-category text-disabled"
+              style="width: 34px; height: 34px;">
+              <app-svg-icon icon="iconCategoryComputer" class="svg-icon"
+                style="font-size: 22px; margin: auto"></app-svg-icon>
+              <span class="card-list__underlay card-list__circle-underlay"></span>
             </div>
-          </td>
-          <td data-product-list="">
-            <div class="d-flex flex-row align-center">
-              <span class="font-weight-medium text-base">&#65284;</span>
-              <span data-product-list="" class="font-weight-medium text-base">2,629</span>
-            </div>
-          </td>
-          <td data-product-list="">
-            <span data-product-list="" class="font-weight-medium text-base">52</span>
-          </td>
-          <td data-product-list="">
-            <button type="button" class="button-circle text-disabled">
-              <span class="button__underlay">
-                <app-svg-icon icon="iconUiButtonEdit" class="svg-icon button-circle-icon"
-                  style="font-size: 22px;"></app-svg-icon>
-              </span>
-            </button>
-            <button type="button" class="button-circle text-disabled">
-              <span class="button__underlay">
-                <app-svg-icon icon="iconUiButtonDelete" class="svg-icon button-circle-icon"
-                  style="font-size: 22px;"></app-svg-icon>
-              </span>
-            </button>
-          </td>
-        </tr>
+          </div>
+          <span class="font-weight-medium text-base mb-0">Computer</span>
+        </td>
+        <td data-product-list="">
+          <div data-product-list="" class="table-img" style="width: 40px;">
+            <app-svg-icon icon="iconBrandApple" class="svg-icon" style="font-size: 55px"></app-svg-icon>
+          </div>
+        </td>
+        <td data-product-list="">
+          <div class="d-flex flex-row align-center">
+            <span class="font-weight-medium text-base">&#65284;</span>
+            <span data-product-list="" class="font-weight-medium text-base">2,629</span>
+          </div>
+        </td>
+        <td data-product-list="">
+          <span data-product-list="" class="font-weight-medium text-base">52</span>
+        </td>
+        <td data-product-list="">
+          <button type="button" class="button-circle text-disabled">
+            <span class="button__underlay">
+              <app-svg-icon icon="iconUiButtonEdit" class="svg-icon button-circle-icon"
+                style="font-size: 22px;"></app-svg-icon>
+            </span>
+          </button>
+          <button type="button" class="button-circle text-disabled">
+            <span class="button__underlay">
+              <app-svg-icon icon="iconUiButtonDelete" class="svg-icon button-circle-icon"
+                style="font-size: 22px;"></app-svg-icon>
+            </span>
+          </button>
+        </td>
+      </tr>
 
 
 
-        <tr data-product-list="">
-          <td data-product-list="">
-            <span data-product-list="" class="font-weight-medium text-base">#00127</span>
-          </td>
-          <td data-product-list="">
-            <div data-product-list="" class="d-flex align-center">
-              <div data-product-list="" class="table-margin-1">
-                <div data-product-list="" class="table-img" style="width: 50px;">
-                  <img class="table-inner-img" src="../../../images/products/product-05.png" style="width: 40px;">
-                </div>
-              </div>
-              <div data-product-list="">
-                <p data-product-list="" class="font-weight-medium text-base mb-0">Adilette 22 slides</p>
-                <p data-product-list="" class="text-sm mb-0 text-disabled">Adidas</p>
+      <tr data-product-list="">
+        <td data-product-list="">
+          <span data-product-list="" class="font-weight-medium text-base">#00127</span>
+        </td>
+        <td data-product-list="">
+          <div data-product-list="" class="d-flex align-center">
+            <div data-product-list="" class="table-margin-1">
+              <div data-product-list="" class="table-img" style="width: 50px;">
+                <img class="table-inner-img" src="../../../images/products/product-05.png" style="width: 40px;">
               </div>
             </div>
-          </td>
-          <td data-product-list="" class="d-flex flex-row align-items-center">
-            <div class="card-list-item__prepend">
-              <div data-product-list="" class="card-list-item-img card-list-item-img-category text-error"
-                style="width: 34px; height: 34px;">
-                <app-svg-icon icon="iconCategoryShoes" class="svg-icon"
-                  style="font-size: 22px; margin: auto"></app-svg-icon>
-                <span class="card-list__underlay card-list__circle-underlay"></span>
-              </div>
+            <div data-product-list="">
+              <p data-product-list="" class="font-weight-medium text-base mb-0">Adilette 22 slides</p>
+              <p data-product-list="" class="text-sm mb-0 text-disabled">Adidas</p>
             </div>
-            <span class="font-weight-medium text-base mb-0">Shoes</span>
-          </td>
-          <td data-product-list="">
-            <div data-product-list="" class="table-img" style="width: 40px;">
-              <app-svg-icon icon="iconBrandAdidas" class="svg-icon" style="font-size: 30px"></app-svg-icon>
+          </div>
+        </td>
+        <td data-product-list="" class="d-flex flex-row align-items-center">
+          <div class="card-list-item__prepend">
+            <div data-product-list="" class="card-list-item-img card-list-item-img-category text-error"
+              style="width: 34px; height: 34px;">
+              <app-svg-icon icon="iconCategoryShoes" class="svg-icon"
+                style="font-size: 22px; margin: auto"></app-svg-icon>
+              <span class="card-list__underlay card-list__circle-underlay"></span>
             </div>
-          </td>
-          <td data-product-list="">
-            <div class="d-flex flex-row align-center">
-              <span class="font-weight-medium text-base">&#65284;</span>
-              <span data-product-list="" class="font-weight-medium text-base">60</span>
-            </div>
-          </td>
-          <td data-product-list="">
-            <span data-product-list="" class="font-weight-medium text-base">897</span>
-          </td>
-          <td data-product-list="">
-            <button type="button" class="button-circle text-disabled">
-              <span class="button__underlay">
-                <app-svg-icon icon="iconUiButtonEdit" class="svg-icon button-circle-icon"
-                  style="font-size: 22px;"></app-svg-icon>
-              </span>
-            </button>
-            <button type="button" class="button-circle text-disabled">
-              <span class="button__underlay">
-                <app-svg-icon icon="iconUiButtonDelete" class="svg-icon button-circle-icon"
-                  style="font-size: 22px;"></app-svg-icon>
-              </span>
-            </button>
-          </td>
-        </tr>
+          </div>
+          <span class="font-weight-medium text-base mb-0">Shoes</span>
+        </td>
+        <td data-product-list="">
+          <div data-product-list="" class="table-img" style="width: 40px;">
+            <app-svg-icon icon="iconBrandAdidas" class="svg-icon" style="font-size: 30px"></app-svg-icon>
+          </div>
+        </td>
+        <td data-product-list="">
+          <div class="d-flex flex-row align-center">
+            <span class="font-weight-medium text-base">&#65284;</span>
+            <span data-product-list="" class="font-weight-medium text-base">60</span>
+          </div>
+        </td>
+        <td data-product-list="">
+          <span data-product-list="" class="font-weight-medium text-base">897</span>
+        </td>
+        <td data-product-list="">
+          <button type="button" class="button-circle text-disabled">
+            <span class="button__underlay">
+              <app-svg-icon icon="iconUiButtonEdit" class="svg-icon button-circle-icon"
+                style="font-size: 22px;"></app-svg-icon>
+            </span>
+          </button>
+          <button type="button" class="button-circle text-disabled">
+            <span class="button__underlay">
+              <app-svg-icon icon="iconUiButtonDelete" class="svg-icon button-circle-icon"
+                style="font-size: 22px;"></app-svg-icon>
+            </span>
+          </button>
+        </td>
+      </tr>
 
 
 
-        <tr data-product-list="">
-          <td data-product-list="">
-            <span data-product-list="" class="font-weight-medium text-base">#00128</span>
-          </td>
-          <td data-product-list="">
-            <div data-product-list="" class="d-flex align-center">
-              <div data-product-list="" class="table-margin-1">
-                <div data-product-list="" class="table-img" style="width: 50px; height: 50px;">
-                  <img class="table-inner-img" src="../../../images/products/product-06.png" style="width: 40px;">
-                </div>
-              </div>
-              <div data-product-list="">
-                <p data-product-list="" class="font-weight-medium text-base mb-0">Kettles Smeg KLF03PGEU</p>
-                <p data-product-list="" class="text-sm mb-0 text-disabled">Smeg</p>
+      <tr data-product-list="">
+        <td data-product-list="">
+          <span data-product-list="" class="font-weight-medium text-base">#00128</span>
+        </td>
+        <td data-product-list="">
+          <div data-product-list="" class="d-flex align-center">
+            <div data-product-list="" class="table-margin-1">
+              <div data-product-list="" class="table-img" style="width: 50px; height: 50px;">
+                <img class="table-inner-img" src="../../../images/products/product-06.png" style="width: 40px;">
               </div>
             </div>
-          </td>
-          <td data-product-list="" class="d-flex flex-row align-items-center">
-            <div class="card-list-item__prepend">
-              <div data-product-list="" class="card-list-item-img card-list-item-img-category text-decorative"
-                style="width: 34px; height: 34px;">
-                <app-svg-icon icon="iconCategoryTechnics" class="svg-icon"
-                  style="font-size: 22px; margin: auto"></app-svg-icon>
-                <span class="card-list__underlay card-list__circle-underlay"></span>
-              </div>
+            <div data-product-list="">
+              <p data-product-list="" class="font-weight-medium text-base mb-0">Kettles Smeg KLF03PGEU</p>
+              <p data-product-list="" class="text-sm mb-0 text-disabled">Smeg</p>
             </div>
-            <span class="font-weight-medium text-base mb-0">Technics</span>
-          </td>
-          <td data-product-list="">
-            <div data-product-list="" class="table-img" style="width: 40px;">
-              <app-svg-icon icon="iconBrandSmeg" class="svg-icon" style="font-size: 40px"></app-svg-icon>
+          </div>
+        </td>
+        <td data-product-list="" class="d-flex flex-row align-items-center">
+          <div class="card-list-item__prepend">
+            <div data-product-list="" class="card-list-item-img card-list-item-img-category text-decorative"
+              style="width: 34px; height: 34px;">
+              <app-svg-icon icon="iconCategoryTechnics" class="svg-icon"
+                style="font-size: 22px; margin: auto"></app-svg-icon>
+              <span class="card-list__underlay card-list__circle-underlay"></span>
             </div>
-          </td>
-          <td data-product-list="">
-            <div class="d-flex flex-row align-center">
-              <span class="font-weight-medium text-base">&#65284;</span>
-              <span data-product-list="" class="font-weight-medium text-base">249</span>
-            </div>
-          </td>
-          <td data-product-list="">
-            <span data-product-list="" class="font-weight-medium text-base">381</span>
-          </td>
-          <td data-product-list="">
-            <button type="button" class="button-circle text-disabled">
-              <span class="button__underlay">
-                <app-svg-icon icon="iconUiButtonEdit" class="svg-icon button-circle-icon"
-                  style="font-size: 22px;"></app-svg-icon>
-              </span>
-            </button>
-            <button type="button" class="button-circle text-disabled">
-              <span class="button__underlay">
-                <app-svg-icon icon="iconUiButtonDelete" class="svg-icon button-circle-icon"
-                  style="font-size: 22px;"></app-svg-icon>
-              </span>
-            </button>
-          </td>
-        </tr>
+          </div>
+          <span class="font-weight-medium text-base mb-0">Technics</span>
+        </td>
+        <td data-product-list="">
+          <div data-product-list="" class="table-img" style="width: 40px;">
+            <app-svg-icon icon="iconBrandSmeg" class="svg-icon" style="font-size: 40px"></app-svg-icon>
+          </div>
+        </td>
+        <td data-product-list="">
+          <div class="d-flex flex-row align-center">
+            <span class="font-weight-medium text-base">&#65284;</span>
+            <span data-product-list="" class="font-weight-medium text-base">249</span>
+          </div>
+        </td>
+        <td data-product-list="">
+          <span data-product-list="" class="font-weight-medium text-base">381</span>
+        </td>
+        <td data-product-list="">
+          <button type="button" class="button-circle text-disabled">
+            <span class="button__underlay">
+              <app-svg-icon icon="iconUiButtonEdit" class="svg-icon button-circle-icon"
+                style="font-size: 22px;"></app-svg-icon>
+            </span>
+          </button>
+          <button type="button" class="button-circle text-disabled">
+            <span class="button__underlay">
+              <app-svg-icon icon="iconUiButtonDelete" class="svg-icon button-circle-icon"
+                style="font-size: 22px;"></app-svg-icon>
+            </span>
+          </button>
+        </td>
+      </tr>
 
 
 
-        <tr data-product-list="">
-          <td data-product-list="">
-            <span data-product-list="" class="font-weight-medium text-base">#00129</span>
-          </td>
-          <td data-product-list="">
-            <div data-product-list="" class="d-flex align-center">
-              <div data-product-list="" class="table-margin-1">
-                <div data-product-list="" class="table-img" style="width: 50px;">
-                  <img class="table-inner-img" src="../../../images/products/product-07.png" style="width: 45px;">
-                </div>
-              </div>
-              <div data-product-list="">
-                <p data-product-list="" class="font-weight-medium text-base mb-0">BRAVIA XR 83” Class A80L OLED 4K HDR
-                </p>
-                <p data-product-list="" class="text-sm mb-0 text-disabled">Sony</p>
+      <tr data-product-list="">
+        <td data-product-list="">
+          <span data-product-list="" class="font-weight-medium text-base">#00129</span>
+        </td>
+        <td data-product-list="">
+          <div data-product-list="" class="d-flex align-center">
+            <div data-product-list="" class="table-margin-1">
+              <div data-product-list="" class="table-img" style="width: 50px;">
+                <img class="table-inner-img" src="../../../images/products/product-07.png" style="width: 45px;">
               </div>
             </div>
-          </td>
-          <td data-product-list="" class="d-flex flex-row align-items-center">
-            <div class="card-list-item__prepend">
-              <div data-product-list="" class="card-list-item-img card-list-item-img-category text-success"
-                style="width: 34px; height: 34px;">
-                <app-svg-icon icon="iconCategoryTV" class="svg-icon"
-                  style="font-size: 22px; margin: auto"></app-svg-icon>
-                <span class="card-list__underlay card-list__circle-underlay"></span>
-              </div>
+            <div data-product-list="">
+              <p data-product-list="" class="font-weight-medium text-base mb-0">BRAVIA XR 83” Class A80L OLED 4K HDR
+              </p>
+              <p data-product-list="" class="text-sm mb-0 text-disabled">Sony</p>
             </div>
-            <span class="font-weight-medium text-base mb-0">TV</span>
-          </td>
-          <td data-product-list="">
-            <div data-product-list="" class="table-img" style="width: 40px;">
-              <app-svg-icon icon="iconBrandSony" class="svg-icon" style="font-size: 40px"></app-svg-icon>
+          </div>
+        </td>
+        <td data-product-list="" class="d-flex flex-row align-items-center">
+          <div class="card-list-item__prepend">
+            <div data-product-list="" class="card-list-item-img card-list-item-img-category text-success"
+              style="width: 34px; height: 34px;">
+              <app-svg-icon icon="iconCategoryTV" class="svg-icon" style="font-size: 22px; margin: auto"></app-svg-icon>
+              <span class="card-list__underlay card-list__circle-underlay"></span>
             </div>
-          </td>
-          <td data-product-list="">
-            <div class="d-flex flex-row align-center">
-              <span class="font-weight-medium text-base">&#65284;</span>
-              <span data-product-list="" class="font-weight-medium text-base">5,299</span>
-            </div>
-          </td>
-          <td data-product-list="">
-            <span data-product-list="" class="font-weight-medium text-base">203</span>
-          </td>
-          <td data-product-list="">
-            <button type="button" class="button-circle text-disabled">
-              <span class="button__underlay">
-                <app-svg-icon icon="iconUiButtonEdit" class="svg-icon button-circle-icon"
-                  style="font-size: 22px;"></app-svg-icon>
-              </span>
-            </button>
-            <button type="button" class="button-circle text-disabled">
-              <span class="button__underlay">
-                <app-svg-icon icon="iconUiButtonDelete" class="svg-icon button-circle-icon"
-                  style="font-size: 22px;"></app-svg-icon>
-              </span>
-            </button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-  <app-pagination></app-pagination>
+          </div>
+          <span class="font-weight-medium text-base mb-0">TV</span>
+        </td>
+        <td data-product-list="">
+          <div data-product-list="" class="table-img" style="width: 40px;">
+            <app-svg-icon icon="iconBrandSony" class="svg-icon" style="font-size: 40px"></app-svg-icon>
+          </div>
+        </td>
+        <td data-product-list="">
+          <div class="d-flex flex-row align-center">
+            <span class="font-weight-medium text-base">&#65284;</span>
+            <span data-product-list="" class="font-weight-medium text-base">5,299</span>
+          </div>
+        </td>
+        <td data-product-list="">
+          <span data-product-list="" class="font-weight-medium text-base">203</span>
+        </td>
+        <td data-product-list="">
+          <button type="button" class="button-circle text-disabled">
+            <span class="button__underlay">
+              <app-svg-icon icon="iconUiButtonEdit" class="svg-icon button-circle-icon"
+                style="font-size: 22px;"></app-svg-icon>
+            </span>
+          </button>
+          <button type="button" class="button-circle text-disabled">
+            <span class="button__underlay">
+              <app-svg-icon icon="iconUiButtonDelete" class="svg-icon button-circle-icon"
+                style="font-size: 22px;"></app-svg-icon>
+            </span>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
 </div>
