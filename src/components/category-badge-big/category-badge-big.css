@@ -1,0 +1,10 @@
+.category-badge-wrapper--big {
+    gap: 20px;
+}
+
+.category-badge__item--big {
+    font-size: 15px;
+    height: 50px; 
+    padding: 0 20px;
+    border-radius: var(--standard-border-radius);
+}
