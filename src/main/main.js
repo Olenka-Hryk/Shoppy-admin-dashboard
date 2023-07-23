@@ -33,6 +33,10 @@ export class MainComponent extends Component {
           path: "/products/create-product",
           load: () => import("../pages/create-product/create-product").then((m) => m.CreateProductComponent),
         },
+        {
+          path: "/categories/category-list",
+          load: () => import("../pages/category-list/category-list").then((m) => m.CategoryListComponent),
+        },
       ],
     }).start();
   }
