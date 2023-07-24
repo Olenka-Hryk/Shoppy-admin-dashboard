@@ -33,3 +33,14 @@
     bottom: 0;
     left: 0;
 }
+
+.category-badge-wrapper--large {
+    gap: 20px;
+}
+
+.category-badge__item--large {
+    font-size: 15px;
+    height: 50px; 
+    padding: 0 20px;
+    border-radius: var(--standard-border-radius);
+}

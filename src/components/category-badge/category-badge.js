@@ -1,5 +1,5 @@
 import { Component } from "../../core";
-import html from "bundle-text:./category-badge.html";
+import html from "bundle-text:./category-badge.html"
 import categoryBadgeTemplate from "bundle-text:./category-badge-template.html";
 import "./category-badge.css";
 
@@ -12,9 +12,16 @@ export class CategoryBadgeComponent extends Component {
   createCategoryBadgeItem(category) {
     const span = document.createElement("span");
     span.innerHTML = categoryBadgeTemplate;
+
     span.querySelector('span.category-badge__item').setAttribute("style", `color: ${category.categoryColor};`);
     span.querySelector('span.category-badge__item').innerHTML += category.name;
     span.querySelector('app-svg-icon').setAttribute("icon", category.iconCode);
+    
+    if(this.getAttribute("appearance")==="badgeLarge") {
+      document.querySelector("#category-badge").classList.add("category-badge-wrapper--large");
+      span.querySelector('span.category-badge__item').classList.add("category-badge__item--large");
+      span.querySelector('app-svg-icon').setAttribute("style", `font-size: 20px;`);
+    }
     return span;
   }
 
