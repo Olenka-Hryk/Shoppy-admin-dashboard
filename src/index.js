@@ -2,6 +2,7 @@ import "./main/main";
 import "./components/forms/form-login/form-login";
 import "./components/svg-icon/svg-icon";
 import "./components/sidenav/sidenav";
+import "./components/alert/alert";
 import "./components/header/header";
 import "./components/pagination/pagination";
 import "./components/category-badge/category-badge";
