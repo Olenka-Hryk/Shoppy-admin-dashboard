@@ -1,10 +1,14 @@
 import { Component } from "../../core";
 import { Category } from "../../api";
+import { Brand } from "../../api";
 import html from "bundle-text:./create-product.html";
 
 export class CreateProductComponent extends Component {
   render() {
     this.innerHTML = html;
+
+    Brand.getBrands()
+    .then((res) => this.querySelector("app-form-create-product app-dropdown-brand-list").updateDropdownBrandList(res));
 
     Category.getCategories()
       .then((res) => this.querySelector("app-category-badge").updateCategoryBadgeList(res))

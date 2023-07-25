@@ -7,25 +7,8 @@
           <label class="small mb-1 m-lg-1" for="inputProductName">Product name:</label>
           <input class="form-control" id="inputProductName" type="text" placeholder="Enter product name" value="">
         </div>
-
         <div class="col-md-5 dropdown-wrapper">
-          <div class="input-field input__control card dropdown">
-            <div class="input-field__content">
-              <div class="label input-field-input dropdown__content text-disabled" id="dropdownMenuButton"
-                data-bs-toggle="dropdown">Select brand</div>
-              <div class="input-field__append-inner">
-                <app-svg-icon icon="iconUiArrowDown" class="svg-icon nav-group-arrow"
-                  style="font-size: 18px"></app-svg-icon>
-              </div>
-              <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
-                <span class="dropdown-item">Adidas</span>
-                <span class="dropdown-item">Apple</span>
-                <span class="dropdown-item">Bose</span>
-                <span class="dropdown-item">Smeg</span>
-                <span class="dropdown-item">Sony</span>
-              </div>
-            </div>
-          </div>
+          <app-dropdown-brand-list></app-dropdown-brand-list>
         </div>
       </div>
 

@@ -1,6 +1,5 @@
 import { Component } from "../../../core";
 import html from "bundle-text:./form-create-product.html";
-import { Category } from "../../../api";
 
 export class FormCreateProductComponent extends Component {
   render() {
