@@ -5,6 +5,7 @@ import "./components/sidenav/sidenav";
 import "./components/header/header";
 import "./components/pagination/pagination";
 import "./components/category-badge/category-badge";
+import "./components/dropdown/dropdown-brand-list/dropdown-brand-list";
 import "./components/cards/weather-widget/weather-widget";
 import "./components/cards/calendar/calendar";
 import "./components/cards/note/note";

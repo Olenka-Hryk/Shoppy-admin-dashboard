@@ -39,3 +39,11 @@
     background-color: var(--color-white);
     box-shadow: var(--standard-box-shadow);
 }
+
+.dropdown-menu--open {
+    transform: rotate(180deg);
+    flex-shrink: 0;
+    transform-origin: center;
+    transition: transform .15s ease-in-out;
+    will-change: transform;
+}
