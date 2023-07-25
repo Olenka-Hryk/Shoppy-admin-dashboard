@@ -7,6 +7,9 @@ export class CategoryBadgeComponent extends Component {
   render() {
     this.innerHTML = html;
     this.categoryBadgeContainer = this.querySelector("#category-badge");
+    if (this.getAttribute("appearance") === "badgeLarge") {
+      this.querySelector("#category-badge").classList.add("category-badge-wrapper--large");
+    }
   }
 
   createCategoryBadgeItem(category) {
@@ -16,9 +19,9 @@ export class CategoryBadgeComponent extends Component {
     span.querySelector('span.category-badge__item').setAttribute("style", `color: ${category.categoryColor};`);
     span.querySelector('span.category-badge__item').innerHTML += category.name;
     span.querySelector('app-svg-icon').setAttribute("icon", category.iconCode);
-    
-    if(this.getAttribute("appearance")==="badgeLarge") {
-      document.querySelector("#category-badge").classList.add("category-badge-wrapper--large");
+    span.querySelector('span.category-badge__item').setAttribute("data-category", category.name);
+
+    if (this.getAttribute("appearance") === "badgeLarge") {
       span.querySelector('span.category-badge__item').classList.add("category-badge__item--large");
       span.querySelector('app-svg-icon').setAttribute("style", `font-size: 20px;`);
     }
