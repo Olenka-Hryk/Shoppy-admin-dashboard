@@ -50,3 +50,7 @@
     background: var(--decorative-main-color);
     color: white !important;
 }
+
+.category-badge__item--disabled {
+    color: var(--color-secondary) !important;
+}
