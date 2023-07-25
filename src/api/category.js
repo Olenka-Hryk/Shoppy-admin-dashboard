@@ -11,11 +11,24 @@ export class Category {
     this.categoryColor = attributes.categoryColor;
   }
 
-  static getCategories() {
-    return fetch(`${API_URL}/categories?${POPULATE}`, {
-      method: "GET",
-    })
+  static getCategories({ filters = [] } = {}) {
+    const filtersQuery = filters
+      .map(({ field, items }) => Category.getFilters(field, items))
+      .join("&");
+    return fetch(`${API_URL}/categories?${POPULATE}${filtersQuery.length ? filtersQuery : ""}`,
+      {
+        method: "GET",
+      }
+    )
       .then((res) => res.json())
       .then(({ data }) => data.map((item) => new Category(item)));
+  }
+
+  static getFilters(field, items) {
+    let result = "";
+    for (let i = 0; i < items.length; i++) {
+      result += `&filters[${field}][$eq][${i}]=${items[i]}`;
+    }
+    return result;
   }
 }

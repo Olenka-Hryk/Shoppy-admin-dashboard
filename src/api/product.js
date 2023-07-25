@@ -16,17 +16,27 @@ export class Product {
     this.category = new Category(attributes.category.data);
   }
 
-  static getProducts({ page = 1, pageSize = 5, query = "" }) {
+  static getProducts({ page = 1, pageSize = 5, query = "", categories = [] }) {
+    const categoriesQuery = Product.getCategoryFilters("name", categories);
+
     return fetch(
-      `${API_URL}/products?${POPULATE}&filters[name][$contains]=${query}&pagination[page]=${page}&pagination[pageSize]=${pageSize}`,
+      `${API_URL}/products?${POPULATE}&filters[name][$contains]=${query}${categoriesQuery.length ? categoriesQuery : ""
+      }&pagination[page]=${page}&pagination[pageSize]=${pageSize}`,
       {
         method: "GET",
-      }
-    )
+      })
       .then((res) => res.json())
       .then(({ data, meta }) => ({
         meta,
         products: data.map((item) => new Product(item)),
       }));
+  }
+
+  static getCategoryFilters(field, items) {
+    let result = "";
+    for (let i = 0; i < items.length; i++) {
+      result += `&filters[category][${field}][$eq][${i}]=${items[i]}`;
+    }
+    return result;
   }
 }
