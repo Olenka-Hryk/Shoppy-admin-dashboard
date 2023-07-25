@@ -40,7 +40,13 @@
 
 .category-badge__item--large {
     font-size: 15px;
-    height: 50px; 
+    height: 30px;
     padding: 0 20px;
     border-radius: var(--standard-border-radius);
+}
+
+.category-badge__item--active,
+.category-badge__item:hover {
+    background: var(--decorative-main-color);
+    color: white !important;
 }
