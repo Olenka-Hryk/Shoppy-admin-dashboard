@@ -1,7 +1,7 @@
 <nav class="pagination justify-content-end">
   <ul class="pagination__list">
 
-    <li class="pagination__item">
+    <li id="paginationPrev" class="pagination__item">
       <button type="button" class="button__pagination">
         <span class="pagination__content">
           <app-svg-icon icon="iconUiArrowLeft" class="svg-icon" style="font-size: 21px; margin: auto;"></app-svg-icon>
@@ -9,9 +9,9 @@
       </button>
     </li>
 
-    <li class="pagination__item">
+    <li class="pagination__item pagination-active">
       <button type="button" class="button__pagination">
-        <span class="pagination__content pagination-active">
+        <span class="pagination__content">
           1
         </span>
       </button>
@@ -36,7 +36,15 @@
     <li class="pagination__item">
       <button type="button" class="button__pagination">
         <span class="pagination__content">
-          ...
+          4
+        </span>
+      </button>
+    </li>
+
+    <li id="paginationMoreSecond" class="pagination__item pagination-expand">
+      <button type="button" class="button__pagination">
+        <span class="pagination__content">
+         ...
         </span>
       </button>
     </li>
@@ -44,12 +52,12 @@
     <li class="pagination__item">
       <button type="button" class="button__pagination">
         <span class="pagination__content">
-          10
+         10
         </span>
       </button>
     </li>
 
-    <li class="pagination__item">
+    <li id="paginationNext" class="pagination__item">
       <button type="button" class="button__pagination">
         <span class="pagination__content">
           <app-svg-icon icon="iconUiArrowRight" class="svg-icon" style="font-size: 21px; margin: auto;"></app-svg-icon>

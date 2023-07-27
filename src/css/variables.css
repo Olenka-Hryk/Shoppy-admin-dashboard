@@ -41,19 +41,20 @@
 
   --decorative-main-color: rgb(115, 103, 240);
 
-  --calendar-time-font-family: "Cairo", sans-serif;
-  --sidenav-section-title-color: rgba(47, 43, 61, 0.42);
-  --authorization-main-background-color: rgb(248, 247, 250);
-  --input-box-shadow-color: rgba(118, 118, 118, 0.113);
-
   --button-decorative-text-color: rgb(255, 255, 255);
   --button-decorative-hover-color: rgb(101, 91, 210);
   --button-color-underlay: rgba(162, 160, 167, 0.16);
 
-  --image-background-color-underlay: rgba(224, 229, 237, 0.52);
-  --image-svg-color-underlay: rgba(168, 174, 184, 1);
-
   --alert-text-color: rgb(63, 0, 119);
   --alert-background-color: rgba(225, 204, 244, 1);
   --alert-border-color: rgb(210, 179, 238);
+
+  --image-background-color-underlay: rgba(224, 229, 237, 0.52);
+  --image-svg-color-underlay: rgba(168, 174, 184, 1);
+
+  --calendar-time-font-family: "Cairo", sans-serif;
+  --sidenav-section-title-color: rgba(47, 43, 61, 0.42);
+  --authorization-main-background-color: rgb(248, 247, 250);
+  --input-box-shadow-color: rgba(118, 118, 118, 0.113);
+  --pagination-button-hover-color: rgba(224, 229, 237, 0.52);
 }
