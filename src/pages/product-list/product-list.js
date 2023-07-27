@@ -1,6 +1,5 @@
 import { Component } from "../../core";
-import { Product } from "../../api";
-import { Category } from "../../api";
+import { Product, Category } from "../../api";
 import html from "bundle-text:./product-list.html";
 
 export class ProductListComponent extends Component {
@@ -8,25 +7,31 @@ export class ProductListComponent extends Component {
     this.innerHTML = html;
     this.productTable = this.querySelector("app-table-product-list");
     this.categoryBadge = this.querySelector("app-category-badge");
-
-    this.querySelector("#input-search-product-list").addEventListener(
-      "keypress",
-      (event) => {
-        if (event.key === "Enter") {
-          this.searchProduct(event.target.value);
-        }
-      });
+    this.pagination = this.querySelector('app-pagination');
+    this.query = '';
+    this.page = 1;
+    this.categories = [];
 
     this.querySelector("#search-product-action").addEventListener(
       "click",
       () => {
-        const inputValue = this.querySelector("#input-search-product-list").value;
-        this.searchProduct(inputValue);
+        this.page = 1;
+        this.query = this.querySelector("#input-search-product-list").value;
+        this.updateProducts();
       });
 
-    Product.getProducts({
-      page: 1,
-    }).then((res) => this.productTable.updateTable(res));
+    this.querySelector("#input-search-product-list").addEventListener("input", (event) => {
+      this.page = 1;
+      this.query = event.target.value;
+      this.updateProducts();
+    });
+
+    this.pagination.addEventListener('pageChange', (event) => {
+      this.page = event.detail.page;
+      this.updateProducts();
+    });
+
+    this.updateProducts();
 
     Category.getCategories()
       .then((res) => this.categoryBadge.updateCategoryBadgeList(res))
@@ -44,17 +49,22 @@ export class ProductListComponent extends Component {
   }
 
   findAllActiveCategory() {
-    const activeCategories = [...$("div#category-badge > span span.category-badge__item--active")]
+    this.page = 1;
+    this.categories = [...$("div#category-badge > span span.category-badge__item--active")]
       .map((elem) => $(elem).data("category"));
-      Product.getProducts({ page: 1, categories: activeCategories }).then((res) =>
-        this.productTable.updateTable(res));
+    this.updateProducts();
   }
 
-  searchProduct(query) {
+  updateProducts() {
     Product.getProducts({
-      page: 1,
-      query: query,
-    }).then((res) => this.productTable.updateTable(res));
+      page: this.page,
+      query: this.query,
+      categories: this.categories,
+      pageSize: 7,
+    }).then((res) => {
+      this.pagination.setAttribute('pages', res.meta.pagination.pageCount || 1);
+      this.productTable.updateTable(res);
+    });
   }
 
   static create() {

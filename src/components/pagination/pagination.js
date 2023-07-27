@@ -5,9 +5,21 @@ import "./pagination.css";
 
 const PAGINATION_GRID = 6;
 const EXPAND_VALUE = 4;
-const LIMIT = 10;
 
 export class PaginationComponent extends Component {
+  static get observedAttributes() {
+    return ['pages'];
+  }
+
+  attributeChangedCallback(name, oldValue, newValue) {
+    if (!this.rendered || oldValue === newValue) return;
+
+    if (name === 'pages') {
+      this.limit = Number(newValue);
+      this.updatePagination(this.limit);
+    }
+  }
+
   render() {
     this.innerHTML = html;
     this.pagination = this.querySelector("nav.pagination");
@@ -15,7 +27,10 @@ export class PaginationComponent extends Component {
     this.paginationNextItem = this.querySelector("#paginationNext");
     this.paginationContainerListItems = this.querySelector("#paginationContainerListItems");
 
-    this.updatePagination(10);
+    this.limit = Number(this.getAttribute('pages'));
+    this.updatePagination(this.limit);
+
+    this.rendered = true;
 
     this.pagination.addEventListener(
       "click",
@@ -27,34 +42,39 @@ export class PaginationComponent extends Component {
         } else {
           activeItem.classList.remove("pagination-active");
           paginationItem.classList.add("pagination-active");
+          this.notifyPageChange(Number(paginationItem.innerText));
         }
 
-        if (LIMIT > PAGINATION_GRID) {
+        if (this.limit > PAGINATION_GRID) {
           if (+paginationItem.innerText === EXPAND_VALUE)
             this.leftExpandPagination();
-          if (+paginationItem.innerText === LIMIT - 3)
+          if (+paginationItem.innerText === this.limit - 3)
             this.rightExpandPagination();
           if (+paginationItem.innerText === 1)
             this.leftShrinkPagination();
-          if (+paginationItem.innerText === LIMIT)
+          if (+paginationItem.innerText === this.limit)
             this.rightShrinkPagination();
           if (paginationItem.id === "paginationPrev") {
-            console.log("Page:" + this.paginationPrev(activeItem));
+            this.notifyPageChange(this.paginationPrev(activeItem));
             return;
           } else if (paginationItem.id === "paginationNext") {
-            console.log("Page:" + this.paginationNext(activeItem));
+            this.notifyPageChange(this.paginationNext(activeItem));
             return;
           }
         } else {
           if (paginationItem.id === "paginationPrev") {
-            console.log("Page:" + this.paginationPrevSimple(activeItem));
+            this.notifyPageChange(this.paginationPrevSimple(activeItem));
             return;
           } else if (paginationItem.id === "paginationNext") {
-            console.log("Page:" + this.paginationNextSimple(activeItem));
+            this.notifyPageChange(this.paginationNextSimple(activeItem));
             return;
           }
         }
       });
+  }
+
+  notifyPageChange(page) {
+    this.dispatchEvent(new CustomEvent('pageChange', { detail: { page } }));
   }
 
   createPaginationCellItem(paginationItem) {
@@ -64,8 +84,8 @@ export class PaginationComponent extends Component {
     return li;
   }
 
-  setActivePaginationCellItem(){
-   this.querySelector("div#paginationContainerListItems li.pagination__item").classList.add("pagination-active")
+  setActivePaginationCellItem() {
+    this.querySelector("div#paginationContainerListItems li.pagination__item").classList.add("pagination-active");
   }
 
   changeLargePaginationView(paginationTotal) {
@@ -109,7 +129,7 @@ export class PaginationComponent extends Component {
     const $paginationItems = $("li.pagination__item").not("#paginationPrev, #paginationNext");
     const lastNav = $paginationItems.find("span.pagination__content").last();
     const lastNavValue = Number($(lastNav).text());
-    if (lastNavValue === LIMIT && $(lastNav).parent().parent().hasClass("pagination-active")) {
+    if (lastNavValue === this.limit && $(lastNav).parent().parent().hasClass("pagination-active")) {
       return lastNavValue;
     } else {
       $(active).parent().next().children().first().addClass("pagination-active");
@@ -130,7 +150,7 @@ export class PaginationComponent extends Component {
 
     if (firstNavValue === 1 && $(firstNav).parent().parent().hasClass("pagination-active")) {
       return firstNavValue;
-    } else if (+active.innerText === LIMIT - 2) {
+    } else if (+active.innerText === this.limit - 2) {
       this.rightExpandPagination();
       return Number($(active).text());
     }
@@ -162,21 +182,21 @@ export class PaginationComponent extends Component {
     const expandNavSecond = $paginationItems.eq(3);
     const expandNavSecondInner = $(expandNavSecond).find("span.pagination__content");
 
-    if (lastNavValue === LIMIT && $(lastNav).parent().parent().hasClass("pagination-active")) {
+    if (lastNavValue === this.limit && $(lastNav).parent().parent().hasClass("pagination-active")) {
       return lastNavValue;
     } else if (+active.innerText === EXPAND_VALUE - 1) {
       this.leftExpandPagination();
       return Number($(active).text());
     }
-    else if (Number($(active).text()) !== LIMIT - EXPAND_VALUE + 1 && $paginationItems.eq(1).hasClass("pagination-expand")) {
-      if (Number(expandNavFirstInner.text()) === LIMIT - EXPAND_VALUE + 2) {
+    else if (Number($(active).text()) !== this.limit - EXPAND_VALUE + 1 && $paginationItems.eq(1).hasClass("pagination-expand")) {
+      if (Number(expandNavFirstInner.text()) === this.limit - EXPAND_VALUE + 2) {
         expandNavFirstInner.html(Number(expandNavFirstInner.text()) + 1);
         expandNavSecondInner.html(Number(expandNavFirstInner.text()) + 1);
         $(active).parent().next().children().first().addClass("pagination-active");
         $(active).removeClass("pagination-active");
         return Number($(active).parent().next().children().first().text());
       } else
-        if (Number(expandNavSecondInner.text()) === LIMIT - 2) {
+        if (Number(expandNavSecondInner.text()) === this.limit - 2) {
           this.rightShrinkPagination();
           $(active).parent().next().children().first().addClass("pagination-active");
           $(active).removeClass("pagination-active");
@@ -187,7 +207,7 @@ export class PaginationComponent extends Component {
           return Number($(active).text());
         }
     } else
-      if (Number(expandNavSecondInner.text()) === LIMIT - EXPAND_VALUE + 1 && Number($(active).text()) === LIMIT - EXPAND_VALUE + 1) {
+      if (Number(expandNavSecondInner.text()) === this.limit - EXPAND_VALUE + 1 && Number($(active).text()) === this.limit - EXPAND_VALUE + 1) {
         expandNavFirstInner.html(Number(expandNavSecondInner.text()));
         expandNavSecondInner.html(Number(expandNavSecondInner.text()) + 1);
         this.rightShrinkPagination();
@@ -249,12 +269,12 @@ export class PaginationComponent extends Component {
 
     const thirdLastNav = $paginationItems.eq(3);
     const thirdLastNavInner = $(thirdLastNav).find("span.pagination__content");
-    thirdLastNavInner.html(LIMIT - EXPAND_VALUE + 1);
+    thirdLastNavInner.html(this.limit - EXPAND_VALUE + 1);
     thirdLastNav.addClass("pagination-active");
 
     const fourthLastNav = $paginationItems.eq(2);
     const fourthLastNavInner = $(fourthLastNav).find("span.pagination__content");
-    fourthLastNavInner.html(LIMIT - EXPAND_VALUE);
+    fourthLastNavInner.html(this.limit - EXPAND_VALUE);
     fourthLastNav.removeClass("pagination-active");
   }
 
@@ -262,16 +282,16 @@ export class PaginationComponent extends Component {
     const $paginationItems = $("li.pagination__item").not("#paginationPrev, #paginationNext");
     const secondLastNav = $paginationItems.eq(4);
     const secondLastNavInner = $(secondLastNav).find("span.pagination__content");
-    secondLastNavInner.html(LIMIT - 1);
+    secondLastNavInner.html(this.limit - 1);
     secondLastNav.removeClass("pagination-expand");
 
     const thirdLastNav = $paginationItems.eq(3);
     const thirdLastNavInner = $(thirdLastNav).find("span.pagination__content");
-    thirdLastNavInner.html(LIMIT - 2);
+    thirdLastNavInner.html(this.limit - 2);
 
     const fourthLastNav = $paginationItems.eq(2);
     const fourthLastNavInner = $(fourthLastNav).find("span.pagination__content");
-    fourthLastNavInner.html(LIMIT - EXPAND_VALUE + 1);
+    fourthLastNavInner.html(this.limit - EXPAND_VALUE + 1);
 
     const fifthLastNav = $paginationItems.eq(1);
     const fifthLastNavInner = $(fifthLastNav).find("span.pagination__content");
