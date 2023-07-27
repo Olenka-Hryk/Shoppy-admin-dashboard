@@ -1,6 +1,5 @@
 import { Component } from "../../core";
-import { Category } from "../../api";
-import { Product } from "../../api";
+import { Category, Product } from "../../api";
 import html from "bundle-text:./category-list.html";
 
 export class CategoryListComponent extends Component {
@@ -8,7 +7,14 @@ export class CategoryListComponent extends Component {
     this.innerHTML = html;
     this.categoryBadge = this.querySelector("app-category-badge");
     this.categoryTable = this.querySelector("app-table-category-list");
-    this.tablePagination = this.querySelector("app-pagination");
+    this.pagination = this.querySelector('app-pagination');
+    this.page = 1;
+    this.categories = [];
+
+    this.pagination.addEventListener('pageChange', (event) => {
+      this.page = event.detail.page;
+      this.updateProducts();
+    });
 
     Category.getCategories()
       .then((res) => this.categoryBadge.updateCategoryBadgeList(res))
@@ -17,7 +23,7 @@ export class CategoryListComponent extends Component {
           "click",
           (event) => {
             this.categoryTable.setAttribute("style", "display: block");
-            this.tablePagination.setAttribute("style", "display: block");
+            this.pagination.setAttribute("style", "display: block");
 
             const badge = event.target.closest(".category-badge__item");
             if (!badge) return;
@@ -29,16 +35,27 @@ export class CategoryListComponent extends Component {
   }
 
   findAllActiveCategory() {
-    const activeCategories = [...$("div#category-badge > span span.category-badge__item--active")]
+    this.page = 1;
+    this.categories = [...$("div#category-badge > span span.category-badge__item--active")]
       .map((elem) => $(elem).data("category"));
 
-    if (activeCategories.length) {
-      Product.getProducts({ page: 1, categories: activeCategories }).then((res) =>
-        this.categoryTable.updateTable(res));
+    if (this.categories.length) {
+      this.updateProducts();
     } else {
       this.categoryTable.setAttribute("style", "display: none");
-      this.tablePagination.setAttribute("style", "display: none");
+      this.pagination.setAttribute("style", "display: none");
     }
+  }
+
+  updateProducts() {
+    Product.getProducts({
+      page: this.page,
+      categories: this.categories,
+      pageSize: 7,
+    }).then((res) => {
+      this.pagination.setAttribute('pages', res.meta.pagination.pageCount || 1);
+      this.categoryTable.updateTable(res);
+    });
   }
 
   static create() {
