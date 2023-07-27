@@ -16,9 +16,15 @@
     border-radius: var(--standard-border-radius);
 }
 
-.pagination li:hover:not(.pagination-active) {
+.pagination li li:hover:not(.pagination-active) {
     background: var(--pagination-button-hover-color);
 }
+
+.pagination li#paginationPrev:hover,
+.pagination li#paginationNext:hover {
+    background: var(--pagination-button-action-hover-color);
+}
+
 
 .pagination__list {
     width: 100%;

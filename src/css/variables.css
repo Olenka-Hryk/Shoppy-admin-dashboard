@@ -57,4 +57,5 @@
   --authorization-main-background-color: rgb(248, 247, 250);
   --input-box-shadow-color: rgba(118, 118, 118, 0.113);
   --pagination-button-hover-color: rgba(224, 229, 237, 0.52);
+  --pagination-button-action-hover-color: rgba(101, 91, 210, 0.27);
 }
