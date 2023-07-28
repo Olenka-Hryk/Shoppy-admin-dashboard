@@ -71,3 +71,17 @@
 .button__underlay:hover {
     background: var(--button-color-underlay);
 }
+
+.button-action--transparent {
+    background: transparent !important;
+}
+
+.button-wrapper--transparent {
+    box-shadow: none !important;
+    border-color: var(--decorative-main-color) !important;
+    border-style: solid;
+}
+
+.button-action-title--transparent {
+    color: var(--decorative-main-color) !important;
+}

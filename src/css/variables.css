@@ -22,7 +22,7 @@
   --value-decorative-main-color: 115, 103, 240;
   --value-accent-text-color: 47, 43, 61;
   --value-color-white: 255, 255, 255;
-  
+
   --color-white: rgb(255, 255, 255);
   --color-disabled: rgba(47, 43, 61, 0.42);
   --color-success: rgb(40, 199, 111);
@@ -58,4 +58,5 @@
   --input-box-shadow-color: rgba(118, 118, 118, 0.113);
   --pagination-button-hover-color: rgba(224, 229, 237, 0.52);
   --pagination-button-action-hover-color: rgba(101, 91, 210, 0.27);
+  --modal-background-color: rgba(76, 78, 100, 0.5);
 }
