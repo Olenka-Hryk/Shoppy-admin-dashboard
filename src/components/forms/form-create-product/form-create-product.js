@@ -6,7 +6,13 @@ export class FormCreateProductComponent extends Component {
     this.innerHTML = html;
 
     this.querySelector('[data-action="save"]').addEventListener('click', () => {
+      try {
+        this.checkValidFormData(this.getFormData());
         this.dispatchEvent(new CustomEvent('formData', { detail: { formData: this.getFormData() } }));
+      } catch (error) {
+        const errorMessage = error.message;
+        this.dispatchEvent(new CustomEvent('errorData', { detail: { errorMessage } }));
+      }
     });
   }
 
@@ -24,6 +30,34 @@ export class FormCreateProductComponent extends Component {
       barcode: +this.querySelector('[data-product="barcode"]').value,
       // productStatus: this.querySelector('[data-product="status"] input:checked').value,
     };
+  }
+
+  checkValidFormData(formData) {
+    if (this.isEmptyInputs(formData)) {
+      throw new Error("You have not filled in data in all required fields*. Try again!");
+    }
+    if (!this.isCorrectNumericData(formData)) {
+      throw new Error("You entered non-numeric input data! Try to correct it.");
+    }
+    if (!this.isCorrectBarcode(formData)) {
+      throw new Error("You entered the wrong barcode format! The barcode must consist of only 12 digits.");
+    }
+  }
+
+  isEmptyInputs = (formData) => {
+    return Object.values(formData).some(value => !value);
+  }
+
+  isNumeric = (value) => {
+    return /\d+(\.\d+)?/g.test(value);
+  }
+
+  isCorrectNumericData = ({ regularPrice: regularPrice, salePrice: salePrice, stock: stock }) => {
+    return (this.isNumeric(regularPrice) && this.isNumeric(salePrice) && this.isNumeric(stock));
+  }
+
+  isCorrectBarcode = ({ barcode: barcode }) => {
+    return /^\d{12}$/.test(barcode) ? true : false;
   }
 
   static create() {
