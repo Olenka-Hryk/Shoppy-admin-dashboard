@@ -47,3 +47,8 @@
     transition: transform .15s ease-in-out;
     will-change: transform;
 }
+
+.dropdown-input {
+    outline: none;
+    color: var(--main-text-color);
+}

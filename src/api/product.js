@@ -8,8 +8,8 @@ export class Product {
     this.id = id;
     this.name = attributes.name;
     this.description = attributes.description;
-    this.image = attributes.image.data.attributes;
-    this.imageUrl = `${IMAGE_URL_BASE}${attributes.image.data.attributes.url}`;
+    this.image = attributes.image?.data?.attributes;
+    this.imageUrl = this.image ? `${IMAGE_URL_BASE}${attributes.image.data.attributes.url}` : null;
     this.regularPrice = attributes.regularPrice;
     this.stock = attributes.stock;
     this.brand = new Brand(attributes.brand.data);
@@ -30,6 +30,14 @@ export class Product {
         meta,
         products: data.map((item) => new Product(item)),
       }));
+  }
+
+  static addProduct(data) {
+    return fetch(`${API_URL}/products`, {
+      method: 'POST',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ data })
+    }).then((res) => res.json());
   }
 
   static getCategoryFilters(field, items) {

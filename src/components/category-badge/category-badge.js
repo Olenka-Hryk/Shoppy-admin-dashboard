@@ -20,6 +20,7 @@ export class CategoryBadgeComponent extends Component {
     span.querySelector('span.category-badge__item').innerHTML += category.name;
     span.querySelector('app-svg-icon').setAttribute("icon", category.iconCode);
     span.querySelector('span.category-badge__item').setAttribute("data-category", category.name);
+    span.querySelector('span.category-badge__item').setAttribute("data-category-id", category.id);
 
     if (this.getAttribute("appearance") === "badgeLarge") {
       span.querySelector('span.category-badge__item').classList.add("category-badge__item--large");

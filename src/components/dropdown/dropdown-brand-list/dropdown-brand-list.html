@@ -1,11 +1,12 @@
 <div class="input-field input__control card dropdown">
   <div class="input-field__content">
-    <div class="label input-field-input dropdown__content text-disabled" id="dropdownMenuButton"
-      data-bs-toggle="dropdown">Select brand</div>
+    <div data-product="brand" class="label input-field-input dropdown__content text-disabled" id="dropdownMenuButton" data-bs-toggle="dropdown">
+      <input class="dropdown-input" placeholder="Select brand">
+    </div>
     <div class="input-field__append-inner">
       <app-svg-icon icon="iconUiArrowDown" class="svg-icon nav-group-arrow" style="font-size: 18px"></app-svg-icon>
     </div>
-    <div class="dropdown-menu w-100" aria-labelledby="dropdownMenuButton">
+    <div class="dropdown-menu w-100 form-control" aria-labelledby="dropdownMenuButton">
     </div>
   </div>
 </div>

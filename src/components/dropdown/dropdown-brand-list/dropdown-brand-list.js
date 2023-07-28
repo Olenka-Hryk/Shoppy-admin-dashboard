@@ -8,6 +8,11 @@ export class DropdownBrandListComponent extends Component {
     this.dropdownBrandContainer = this.querySelector("div.dropdown-menu");
     this.dropdownSelectedValue = this.querySelector("#dropdownMenuButton");
 
+    this.dropdownBrandContainer.addEventListener('click', (event) => {
+      const brandId = event.target.dataset.brandId;
+      this.setAttribute('data-selected', brandId);
+    });
+
 
     this.dropdown.addEventListener(
       "click",
@@ -28,6 +33,7 @@ export class DropdownBrandListComponent extends Component {
   createDropdownBrandList(brand) {
     const span = document.createElement("span");
     span.classList.add("dropdown-item");
+    span.setAttribute("data-brand-id", brand.id);
     span.innerText = brand.name;
     return span;
   }
