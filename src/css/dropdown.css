@@ -6,7 +6,7 @@
 }
 
 .dropdown__content {
-    min-height: 36.5px;
+    min-height: 38.5px;
     color: var(--standard-placeholder-color) !important;
     font-family: var(--main-font-family);
 }
