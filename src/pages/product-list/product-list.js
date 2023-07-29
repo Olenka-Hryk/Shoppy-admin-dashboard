@@ -8,14 +8,14 @@ export class ProductListComponent extends Component {
     this.productTable = this.querySelector("app-table-product-list");
     this.categoryBadge = this.querySelector("app-category-badge");
     this.pagination = this.querySelector('app-pagination');
-    this.modal = this.querySelector("app-modal-delete-product");
+    this.modalDeleteProduct = this.querySelector("app-modal-delete-product");
     this.customAlert = this.querySelector("app-alert");
     this.query = '';
     this.page = 1;
     this.categories = [];
 
     this.productTable.addEventListener('productDelete', async (event) => {
-      const confirmed = await this.modal.open();
+      const confirmed = await this.modalDeleteProduct.open();
 
       if (confirmed) {
         Product.deleteProduct(event.detail.productId).then(() => {
@@ -49,7 +49,7 @@ export class ProductListComponent extends Component {
     Category.getCategories()
       .then((res) => this.categoryBadge.updateCategoryBadgeList(res))
       .then(() => {
-        this.querySelector("app-category-badge").addEventListener(
+        this.querySelector("app-category-badge[appearance='badgeLarge']").addEventListener(
           "click",
           (event) => {
             const badge = event.target.closest(".category-badge__item");
@@ -63,7 +63,7 @@ export class ProductListComponent extends Component {
 
   findAllActiveCategory() {
     this.page = 1;
-    this.categories = [...$("div#category-badge > span span.category-badge__item--active")]
+    this.categories = [...$("app-category-badge[appearance='badgeLarge'] div#category-badge > span span.category-badge__item--active")]
       .map((elem) => $(elem).data("category"));
     this.updateProducts();
   }
