@@ -1,5 +1,6 @@
 import "./main/main";
 import "./components/modal/modal-delete-product/modal-delete-product";
+import "./components/modal/modal-edit-product/modal-edit-product";
 import "./components/forms/form-login/form-login";
 import "./components/svg-icon/svg-icon";
 import "./components/sidenav/sidenav";
