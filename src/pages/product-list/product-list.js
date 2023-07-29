@@ -6,17 +6,33 @@ export class ProductListComponent extends Component {
   render() {
     this.innerHTML = html;
     this.productTable = this.querySelector("app-table-product-list");
-    this.categoryBadge = this.querySelector("app-category-badge");
+    this.categoryBadge = this.querySelector("app-category-badge[appearance='badgeLarge']");
     this.pagination = this.querySelector('app-pagination');
+    this.modalEditProduct = this.querySelector("app-modal-edit-product");
     this.modalDeleteProduct = this.querySelector("app-modal-delete-product");
     this.customAlert = this.querySelector("app-alert");
     this.query = '';
     this.page = 1;
     this.categories = [];
 
+
+    this.productTable.addEventListener('productEdit', async (event) => {
+      try {
+        const productId = event.detail.productId;
+        const formData = await this.modalEditProduct.open(productId);
+
+        if (formData) {
+          const res = await Product.updateProduct(productId, formData);
+          this.updateProducts();
+          this.customAlert.displayAlert("Success", "Success! The product has been updated.");
+        }
+      } catch (err) {
+        this.customAlert.displayAlert("Error", "Error! The product update has been failed.");
+      }
+    });
+
     this.productTable.addEventListener('productDelete', async (event) => {
       const confirmed = await this.modalDeleteProduct.open();
-
       if (confirmed) {
         Product.deleteProduct(event.detail.productId).then(() => {
           this.updateProducts();

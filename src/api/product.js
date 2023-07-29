@@ -11,9 +11,11 @@ export class Product {
     this.image = attributes.image?.data?.attributes;
     this.imageUrl = this.image ? `${IMAGE_URL_BASE}${attributes.image.data.attributes.url}` : null;
     this.regularPrice = attributes.regularPrice;
+    this.salePrice = attributes.salePrice ?? 0;
     this.stock = attributes.stock;
     this.brand = new Brand(attributes.brand.data);
     this.category = new Category(attributes.category.data);
+    this.barcode = attributes.barcode ?? '';
   }
 
   static getProducts({ page = 1, pageSize = 5, query = "", categories = [] }) {
@@ -38,6 +40,21 @@ export class Product {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ data })
     }).then((res) => res.json());
+  }
+
+  static updateProduct(id, data) {
+    return fetch(`${API_URL}/products/${id}`, {
+      method: 'PUT',
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ data })
+    }).then((res) => res.json());
+  }
+
+  static getProductById(id) {
+    return fetch(`${API_URL}/products/${id}?${POPULATE}`, {
+      method: 'GET',
+    }).then((res) => res.json())
+      .then(({ data }) => new Product(data));
   }
 
   static deleteProduct(id) {

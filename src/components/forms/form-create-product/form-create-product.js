@@ -5,6 +5,14 @@ import html from "bundle-text:./form-create-product.html";
 export class FormCreateProductComponent extends Component {
   render() {
     this.innerHTML = html;
+    if (this.getAttribute("form-type") === "editProduct") {
+      this.querySelector("#modalActionButton").setAttribute("data-action", "edit");
+      this.querySelector("#modalActionButton span.button-action-title").innerText = "Edit Product";
+    }
+    if (this.getAttribute("form-type") === "createProduct") {
+      this.querySelector("#modalActionButton").setAttribute("data-action", "save");
+      this.querySelector("#modalActionButton span.button-action-title").innerText = "Save Product";
+    }
 
     Brand.getBrands()
       .then((res) => this.querySelector("app-dropdown-brand-list").updateDropdownBrandList(res));
@@ -17,17 +25,11 @@ export class FormCreateProductComponent extends Component {
           (event) => {
             const badge = event.target.closest(".category-badge__item");
             if (!badge) return;
-            $(badge).toggleClass("category-badge__item--active");
-
-            if ($(badge).hasClass("category-badge__item--active")) {
-              this.makeDisableAllNonActiveBadge();
-            } else {
-              this.makeVisibleAllActiveBadge();
-            }
+            this.updateBadge(badge);
           });
       });
 
-    this.querySelector('[data-action="save"]').addEventListener('click', () => {
+    this.querySelector('[data-action="save"]')?.addEventListener('click', () => {
       try {
         this.checkValidFormData(this.getFormData());
         this.dispatchEvent(new CustomEvent('formData', { detail: { formData: this.getFormData() } }));
@@ -36,6 +38,17 @@ export class FormCreateProductComponent extends Component {
         this.dispatchEvent(new CustomEvent('errorData', { detail: { errorMessage } }));
       }
     });
+
+    this.querySelector('[data-action="edit"]')?.addEventListener('click', () => {
+      try {
+        this.checkValidFormData(this.getFormData());
+        this.dispatchEvent(new CustomEvent('formData', { detail: { formData: this.getFormData() } }));
+      } catch (error) {
+        const errorMessage = error.message;
+        this.dispatchEvent(new CustomEvent('errorData', { detail: { errorMessage } }));
+      }
+    });
+
   }
 
   makeDisableAllNonActiveBadge() {
@@ -70,6 +83,37 @@ export class FormCreateProductComponent extends Component {
       barcode: +this.querySelector('[data-product="barcode"]').value,
       // productStatus: this.querySelector('[data-product="status"] input:checked').value,
     };
+  }
+
+  selectCategoryBadge(categoryId) {
+    $('.category-badge__item').each(function() {
+      $(this).removeClass('category-badge__item--active');
+    });
+    this.makeVisibleAllActiveBadge();
+    const badge = this.querySelector(`.category-badge__item[data-category-id="${categoryId}"`);
+    this.updateBadge(badge);
+  }
+
+  updateBadge(badgeElem) {
+    const badge = $(badgeElem);
+    badge.toggleClass("category-badge__item--active");
+
+    if (badge.hasClass("category-badge__item--active")) {
+      this.makeDisableAllNonActiveBadge();
+    } else {
+      this.makeVisibleAllActiveBadge();
+    }
+  }
+
+  setFormData(product) {
+    this.querySelector('[data-product="name"]').value = product.name;
+    this.querySelector('app-dropdown-brand-list').selectBrand(product.brand.id);
+    this.selectCategoryBadge(product.category.id);
+    this.querySelector('[data-product="regularPrice"]').value = product.regularPrice;
+    this.querySelector('[data-product="description"]').value = product.description;
+    this.querySelector('[data-product="salePrice"]').value = product.salePrice;
+    this.querySelector('[data-product="stock"]').value = product.stock;
+    this.querySelector('[data-product="barcode"]').value = product.barcode;
   }
 
   checkValidFormData(formData) {

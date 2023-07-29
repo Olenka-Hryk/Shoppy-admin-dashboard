@@ -13,7 +13,6 @@ export class DropdownBrandListComponent extends Component {
       this.setAttribute('data-selected', brandId);
     });
 
-
     this.dropdown.addEventListener(
       "click",
       (event) => {
@@ -28,6 +27,13 @@ export class DropdownBrandListComponent extends Component {
         this.dropdownSelectedValue.innerText = event.target.innerText;
         this.dropdownSelectedValue.setAttribute("style", "color: var(--main-text-color) !important");
       });
+  }
+
+  selectBrand(brandId) {
+    this.setAttribute('data-selected', brandId);
+    const brandOption = this.querySelector(`.dropdown-item[data-brand-id="${brandId}"`);
+    this.dropdownSelectedValue.innerText = brandOption.innerText;
+    this.dropdownSelectedValue.setAttribute("style", "color: var(--main-text-color) !important");
   }
 
   createDropdownBrandList(brand) {
