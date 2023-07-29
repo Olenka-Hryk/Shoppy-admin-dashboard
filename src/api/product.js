@@ -40,6 +40,12 @@ export class Product {
     }).then((res) => res.json());
   }
 
+  static deleteProduct(id) {
+    return fetch(`${API_URL}/products/${id}`, {
+      method: 'DELETE',
+    }).then((res) => res.json());
+  }
+
   static getCategoryFilters(field, items) {
     let result = "";
     for (let i = 0; i < items.length; i++) {
