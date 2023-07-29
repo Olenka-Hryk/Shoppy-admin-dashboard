@@ -4,15 +4,21 @@ import html from "bundle-text:./modal-delete-product.html";
 export class ModalDeleteProductComponent extends Component {
   render() {
     this.innerHTML = html;
-    
-    $('[data-action="modal-close"]').on("click", () => {
-      $('#modalBoxDeleteProduct').modal('hide');
-    });
+  }
 
-    $('[data-action="modal-delete"]').on("click", () => {
-      $('#modalBoxDeleteProduct').modal('hide');
-      const message = "Success! The product has been deleted from the database.";
-      this.dispatchEvent(new CustomEvent('modalDeletedClick', { detail: { message } }));
+  open() {
+    $('#modalBoxDeleteProduct').modal('show');
+    
+    return new Promise((resolve) => {
+      $('[data-action="modal-close"]').on("click", () => {
+        $('#modalBoxDeleteProduct').modal('hide');
+        resolve(false);
+      });
+  
+      $('[data-action="modal-delete"]').on("click", () => {
+        $('#modalBoxDeleteProduct').modal('hide');
+        resolve(true);
+      });
     });
   }
 

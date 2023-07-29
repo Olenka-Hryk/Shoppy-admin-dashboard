@@ -22,6 +22,10 @@ export class TableProductListComponent extends Component {
     tr.querySelector('[data-cell="brand-icon"]').setAttribute("icon", product.brand.iconCode);
     tr.querySelector('[data-cell="regular-price"]').innerText = product.regularPrice;
     tr.querySelector('[data-cell="stock"]').innerText = product.stock;
+    
+    tr.querySelector('[data-action="delete"]').onclick = () => {
+      this.dispatchEvent(new CustomEvent('productDelete', { detail: { productId: product.id } }));
+    };
     return tr;
   }
 

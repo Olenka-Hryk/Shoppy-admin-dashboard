@@ -8,9 +8,22 @@ export class ProductListComponent extends Component {
     this.productTable = this.querySelector("app-table-product-list");
     this.categoryBadge = this.querySelector("app-category-badge");
     this.pagination = this.querySelector('app-pagination');
+    this.modal = this.querySelector("app-modal-delete-product");
+    this.customAlert = this.querySelector("app-alert");
     this.query = '';
     this.page = 1;
     this.categories = [];
+
+    this.productTable.addEventListener('productDelete', async (event) => {
+      const confirmed = await this.modal.open();
+
+      if (confirmed) {
+        Product.deleteProduct(event.detail.productId).then(() => {
+          this.updateProducts();
+          this.customAlert.displayAlert("Success!", "Success! The product has been deleted from the database.");
+        });
+      }
+    });
 
     this.querySelector("#search-product-action").addEventListener(
       "click",
