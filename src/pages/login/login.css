@@ -1,9 +1,6 @@
 html,
 body {
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 body {
@@ -12,4 +9,10 @@ body {
 
 a {
  color: var(--decorative-main-color);
+}
+
+#router-slot {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

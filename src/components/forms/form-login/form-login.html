@@ -3,18 +3,18 @@
     <img src="/src/images/ui-img/shoppy-main-logo.png" alt="logo-shoppy" style="max-width: 3em;">
   </div>
   <div class="col-12 text-center mb-0">
-    <h1 class="accent-text">Sign in</h1><span>Get access to Shoppy admin dashboard</span>
+    <h1 class="text-accent">Sign in</h1><span class="text-accent">Get access to Shoppy admin dashboard</span>
   </div>
   <div class="col-12">
     <div class="mb-2">
       <label class="form-label mb-0 mt-2">User name</label>
-      <input type="email" class="form-control form-control-lg input-field" placeholder="name">
+      <input data-login="userName" type="text" class="form-control form-control-lg input-field" placeholder="name">
     </div>
   </div>
   <div class="col-12">
     <div class="mb-2">
       <label class="form-label mb-0 mt-2">Email address</label>
-      <input type="email" class="form-control form-control-lg input-field" placeholder="name@example.com">
+      <input data-login="userEmail" type="email" class="form-control form-control-lg input-field" placeholder="name@example.com">
     </div>
   </div>
   <div class="col-12">
@@ -24,21 +24,22 @@
           <a class="mb-1 decorative-text" href="#">Forgot Password?</a>
         </span>
       </div>
-      <input type="password" class="form-control form-control-lg input-field">
+      <input data-login="userPassword" type="password" class="form-control form-control-lg input-field">
     </div>
   </div>
   <div class="col-12">
     <div class="form-check">
       <input class="form-check-input" type="checkbox" id="flexCheckDefault" value="">
-      <label class="form-check-label" for="flexCheckDefault">Remember me</label>
+      <label class="form-check-label text-accent" for="flexCheckDefault">Remember me</label>
     </div>
   </div>
   <div class="col-12 text-center">
-    <a type="button" class="btn btn-primary button-login" href="#">Login</a>
+    <a data-login="actionLogin" type="button" class="btn btn-primary button-login">Login</a>
   </div>
   <div class="col-12 text-center mt-4">
-    <span>Don't have an account yet?
+    <span class="text-accent">Don't have an account yet?
       <a class="decorative-text" href="#">Sign up here</a>
     </span>
   </div>
 </form>
+<app-alert></app-alert>

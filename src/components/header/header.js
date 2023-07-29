@@ -5,6 +5,7 @@ import "./header.css";
 export class HeaderComponent extends Component {
   render() {
     this.innerHTML = html;
+    this.querySelector("#userName").innerText = localStorage.getItem('userName') ?? "";
   }
 
   static create() {

@@ -6,6 +6,13 @@ export class MainComponent extends Component {
   render() {
     this.innerHTML = html;
     this.initRouter();
+
+    const isLoginPage = location.pathname === '/login';
+
+    if(isLoginPage) {
+      this.querySelector('app-header').setAttribute('style', 'display:none');
+      this.querySelector('app-sidenav').setAttribute('style', 'display:none');
+    }
   }
 
   static create() {
